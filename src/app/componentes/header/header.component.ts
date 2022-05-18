@@ -8,11 +8,8 @@ import { PortfolioService } from 'src/app/servicios/portfolio.service';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private datosPortfolio:PortfolioService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.datosPortfolio.obtenerDatos();
-
   }
-
 }

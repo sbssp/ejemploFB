@@ -12,6 +12,7 @@ import { ProyectosComponent } from './componentes/proyectos/proyectos.component'
 import { FormularioExpComponent } from './componentes/experiencia/formulario-exp/formulario-exp.component';
 import { PortfolioService } from './servicios/portfolio.service';
 import { HttpClientModule} from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { HttpClientModule} from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
 
   ],
   providers: [PortfolioService],
