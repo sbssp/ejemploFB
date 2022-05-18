@@ -3,12 +3,15 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { AcercadeComponent } from './acercade/acercade.component';
-import { ExperienciaComponent } from './experiencia/experiencia.component';
-import { EstudiosComponent } from './estudios/estudios.component';
-import { SkillsComponent } from './skills/skills.component';
-import { ProyectosComponent } from './proyectos/proyectos.component';
+import { HeaderComponent } from './componentes/header/header.component';
+import { AcercadeComponent } from './componentes/acercade/acercade.component';
+import { ExperienciaComponent } from './componentes/experiencia/experiencia.component';
+import { EstudiosComponent } from './componentes/estudios/estudios.component';
+import { SkillsComponent } from './componentes/skills/skills.component';
+import { ProyectosComponent } from './componentes/proyectos/proyectos.component';
+import { FormularioExpComponent } from './componentes/experiencia/formulario-exp/formulario-exp.component';
+import { PortfolioService } from './servicios/portfolio.service';
+import { HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,13 +21,16 @@ import { ProyectosComponent } from './proyectos/proyectos.component';
     ExperienciaComponent,
     EstudiosComponent,
     SkillsComponent,
-    ProyectosComponent
+    ProyectosComponent,
+    FormularioExpComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
+
   ],
-  providers: [],
+  providers: [PortfolioService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
