@@ -12,11 +12,13 @@ import { PortfolioService } from 'src/app/servicios/portfolio.service';
 export class ExperienciaComponent implements OnInit {
 
 
-  experiencias:Experiencia[];
-  personas:Persona[];
+  experiencias!:Experiencia[];
+  personas!:Persona[];
 
   constructor(private http:PortfolioService, private router:Router ) { }
 
+
+  //Métodos html
   ngOnInit(): void {
     this.http.getExpeiencia()
     .subscribe(data=>{
@@ -28,6 +30,8 @@ export class ExperienciaComponent implements OnInit {
     })
   }
   
+
+  //Mostrar/esconder formularios
   public mostrar:boolean = true;
   public esconder:boolean = false;
 
@@ -35,4 +39,10 @@ export class ExperienciaComponent implements OnInit {
     this.mostrar = !this.mostrar;
     this.esconder = !this.esconder;
     }
-}
+
+  
+
+    }
+
+
+

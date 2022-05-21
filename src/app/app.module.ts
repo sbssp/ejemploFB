@@ -13,6 +13,10 @@ import { FormularioExpComponent } from './componentes/experiencia/formulario-exp
 import { PortfolioService } from './servicios/portfolio.service';
 import { HttpClientModule} from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MaterialModule } from '@angular/material';
+import { DatePickerModule } from 'angular-material-datepicker';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -29,7 +33,11 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
+    DatePickerModule,
+    BrowserAnimationsModule
 
   ],
   providers: [PortfolioService],

@@ -1,13 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ExperienciaComponent } from './componentes/experiencia/experiencia.component';
+import { AppComponent } from './app.component';
 import { FormularioExpComponent } from './componentes/experiencia/formulario-exp/formulario-exp.component';
 
 const routes: Routes = [
 
   {path:'agregarexp', component:FormularioExpComponent},
-  {path:'editarexp', component:FormularioExpComponent},
-  {path:'borrarexp', component:ExperienciaComponent}
+  {path:'home', component:AppComponent}
 ];
 
 @NgModule({
@@ -15,3 +14,5 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+
+export const ArrayOfComponents = [FormularioExpComponent]

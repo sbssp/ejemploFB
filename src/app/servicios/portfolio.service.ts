@@ -10,14 +10,16 @@ import { Persona } from '../modelo/persona';
 export class PortfolioService {
 
 
-  experiencias:Experiencia[];
-  personas:Persona[];
+  experiencias!:Experiencia[];
+  personas!:Persona[];
 
   constructor(private http:HttpClient) {}
 
     Urlexp='http://localhost:8080/ver/experiencia';
+    Urlexpadd='http://localhost:8080/new/experiencia';
     Urlpers='http://localhost:8080/ver/persona';
 
+    
   getExpeiencia(){
     return this.http.get<Experiencia[]>(this.Urlexp);
   }
@@ -25,5 +27,10 @@ export class PortfolioService {
   getPersona(){
     return this.http.get<Persona[]>(this.Urlpers);
   }
+
+  createExperiencia(experiencia:Experiencia){
+    return this.http.post<Experiencia>(this.Urlexpadd, experiencia)
+  }
+
 }
 

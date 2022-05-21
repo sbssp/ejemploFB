@@ -1,11 +1,11 @@
 export class Experiencia{
 
-    puesto:String;
-    empresa:String;
-    descripcion:String;
-    fecha_desde:String;
-    fecha_hasta:String;
-    icono:String;
+    puesto!:String;
+    empresa!:String;
+    descripcion!:String;
+    fecha_desde!:String;
+    fecha_hasta!:String;
+    icono!:String;
 
-    
+   
 }

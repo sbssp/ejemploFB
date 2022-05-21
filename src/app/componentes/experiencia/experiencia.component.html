@@ -14,7 +14,7 @@
    <!--Boton Agregar Bloque Experiencia-->
    <div class="col-8">
      
-    <button  type="button" class="btn btn-warning float-end btn-top" >Agregar
+    <button   routerLink="/agregarexp" routerLinkActive="active" type="button" class="btn btn-warning float-end btn-top"  >Agregar
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg"
         viewBox="0 0 16 16">
         <path fill-rule="evenodd"
@@ -41,12 +41,14 @@
       </button>
   </div>
 
+  
 </div>
+
 </div>
 
 
 
-
+<app-formulario-exp></app-formulario-exp>
 
 
   <!--BLOQUES DE EXPERIENCIA-->
@@ -64,11 +66,12 @@
           <input *ngIf = "esconder" type="text" class="form-control" value = {{experiencia.icono}}>
 
         </div>
-
-       
       </div>
 
       
+
+
+
       <div class="col-10">
         <div class="row">
           <div class="col-10 fs-2 text lh-lg border-bottom text-primary">
@@ -117,5 +120,8 @@
           </button>
         </div>
       </div>
+      
 </form>
+
+
  
