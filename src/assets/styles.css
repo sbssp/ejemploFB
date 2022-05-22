@@ -23,30 +23,88 @@
     
   
 }
-.btn-top {
+.m-top {
     margin-top: 3px;
   
   
 }
 .marco-contenedor {
     
-    border-radius: 0px 20px 20px 0px;
+    border-radius: 0px 0px 20px 0px;
     border: solid 3px rgb(72, 129, 175);    
     margin-top:-2px;
+    box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;}
+
+.marco-contenedor-agregar {
+
+    border: solid 3px #33658A;
+    margin-top:-2px;
+    box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
 }
+
 .titulo-contenedor {
     
    
     border-radius: 5px 5px 0px 0px;
-    background-color: rgb(31, 84, 128);  
+    background-color: #2f4858;
   
 }
+
+.titulo-contenedor-agregar {
+    
+    background-color: #33658A;
+    color: white;
+      
+}
+.titulo-contenedor-editar {
+    
+   
+    border-radius: 5px 5px 0px 0px;
+    background-color: rgb(72, 129, 175);   
+
+    color: white;
+      
+}
+.marco-contenedor-editar {
+    
+    border-radius: 0px 20px 20px 0px;
+    border: solid 3px 0px 0px 3px rgb(168, 104, 87);    
+    margin-top:-2px;
+    box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+}
+
 .titulo-css{
 
-  color: azure;
-  --bs-text-opacity: 1;
+  color:aliceblue;
+  text-shadow: rgb(117, 117, 117) 2px 1px;
+
   
 }
+.btn-agregar{
+    background-color: #33658A;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px 5px 5px 5px;
+}
+.btn-agregar:hover{
+    background-color: #69d1c5  ;
+
+}
+.row-bottom{
+    padding-top:15px;
+    padding-bottom:15px;
+}
+.titulo-css-agregar{
+
+    color: azure;
+    --bs-text-opacity: 1;   
+    
+  }
 
 .bloque-tarjeta {
     margin-top:10px;

@@ -11,7 +11,7 @@ import { PortfolioService } from 'src/app/servicios/portfolio.service';
 export class AcercadeComponent implements OnInit {
 
 
-  personas:Persona[];
+  personas!:Persona[];
   
   constructor(private http:PortfolioService, private router:Router ) { }
 

@@ -1,7 +1,7 @@
 export class Habilidades{
 
-    habilidad:String;
-    dominio:String;
+    habilidad!:String;
+    dominio!:String;
     
     
 }

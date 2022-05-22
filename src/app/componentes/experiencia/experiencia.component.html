@@ -1,121 +1,102 @@
-
 <!--<app-formulario-exp></app-formulario-exp>-->
 
-  <!--HEADER EXPERIENCIA-->
-  <div class="container-lg titulo-contenedor bloque-tarjeta">
-    <div class="row">
+<!--HEADER-->
+<div class="container-lg titulo-contenedor bloque-tarjeta">
+  <div class="row">
 
-      <div class="col-4">
-        <div class="fs-2 text lh-lg titulo-css">
-          <h2>Experiencia</h2>
-        </div>
+    <div class="col-4">
+      <div class="fs-2 text lh-lg titulo-css">
+        <h2>Experiencia</h2>
       </div>
-      
-   <!--Boton Agregar Bloque Experiencia-->
-   <div class="col-8">
-     
-    <button  type="button" class="btn btn-warning float-end btn-top" >Agregar
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg"
-        viewBox="0 0 16 16">
-        <path fill-rule="evenodd"
-          d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z" />
-      </svg>
-    </button>
+    </div>
 
-     <!--Boton Guardar Bloque Experiencia-->
+    <!--Boton Agregar Experiencia-->
+    <div class="col-8">
 
-     
-    <button  type="button" class="btn btn-success float-end btn-top" >Guardar
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-save2-fill" viewBox="0 0 16 16">
-        <path d="M8.5 1.5A1.5 1.5 0 0 1 10 0h4a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h6c-.314.418-.5.937-.5 1.5v6h-2a.5.5 0 0 0-.354.854l2.5 2.5a.5.5 0 0 0 .708 0l2.5-2.5A.5.5 0 0 0 10.5 7.5h-2v-6z"/>
-      </svg>
-    </button>
-
-       <!--Boton editar-->
-       <button type="button" class="btn btn-primary  float-end btn-top " (click)="cambiarInput()">Editar
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil"
+      <button *ngIf="mostrarEditar" (click)="habilitarAgregar()" type="button" class="float-end  btn-agregar">Agregar
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg"
           viewBox="0 0 16 16">
-          <path
-            d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z" />
+          <path fill-rule="evenodd"
+            d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z" />
         </svg>
       </button>
+    </div>
   </div>
-
-</div>
 </div>
 
 
+<!--Componentes de Agregar y edicion-->
+<app-agregar-exp *ngIf="esconderAgregar"></app-agregar-exp>
+<app-editar-exp *ngIf="esconderEditar"></app-editar-exp>
 
 
 
 
-  <!--BLOQUES DE EXPERIENCIA-->
-  <div *ngFor="let experiencia of experiencias" class="container-lg marco-contenedor" >
+<!--BLOQUES DE EXPERIENCIA-->
+<div *ngFor="let experiencia of experiencias" class="container-lg marco-contenedor">
 
-    <form action="">
-    <div class="row" >
+  <form action="">
+    <div class="row">
       <div class="col-2 align-self-center">
 
         <!--Icono experiencia-->
         <div class="row ">
-
-          <img *ngIf="mostrar" src={{experiencia.icono}} class="img-thumbnail" alt="experiencia">
-          <label *ngIf = "esconder" >Url de la imagen</label>
-          <input *ngIf = "esconder" type="text" class="form-control" value = {{experiencia.icono}}>
-
+          <img *ngIf="mostrar" src={{experiencia.icono}} class="img-fluid img_thumbnail" alt="experiencia">
         </div>
-
-       
       </div>
 
-      
       <div class="col-10">
         <div class="row">
-          <div class="col-10 fs-2 text lh-lg border-bottom text-primary">
+          <div class="col-10 fs-2 text lh-lg border-bottom  ">
 
-            <h4 *ngIf="mostrar">{{experiencia.empresa}}</h4>
+            <h3 *ngIf="mostrar">{{experiencia.empresa}}</h3>
             <h5 *ngIf="mostrar">{{experiencia.puesto}}</h5>
 
-            <input *ngIf = "esconder" type="text" class="form-control" value = {{experiencia.empresa}}>
-            <input *ngIf = "esconder" type="text" class="form-control" value = {{experiencia.puesto}}>
-
           </div>
-          </div>
-          
+        </div>
 
-          <!--Detalle de experiencia-->
-          <div>
-            <span *ngIf="mostrar"> {{experiencia.descripcion}}</span> </div>
-            <textarea *ngIf = "esconder" rows="5"class="form-control" value = {{experiencia.descripcion}}></textarea>
 
-          <!--Fecha de experiencia-->
-          <div class="row">
-            <div class="col-lg-2 col-sm-2 fecha_desde ">
-              <span *ngIf="mostrar">{{experiencia.fecha_desde}} - {{experiencia.fecha_hasta}}</span>
-              <label  *ngIf="esconder">Desde:</label>
-              <input  *ngIf="esconder" type="date" />
-              <label  *ngIf="esconder">Hasta:</label>
-              <input  *ngIf="esconder" type="date" />
-              <div>
-              </div>
+        <!--Descripcion-->
+        <div> 
+          <span *ngIf="mostrar" class="descripcion"> {{experiencia.descripcion}}</span>
+        </div>
+
+
+        <!--Fecha desde/hasta-->
+        <div class="row">
+          <div class="col fecha_desde ">
+            <span *ngIf="mostrar" class="fecha">{{experiencia.fecha_desde}} / {{experiencia.fecha_hasta}}</span>
+            <div>
             </div>
-          
-          
           </div>
+
+
         </div>
       </div>
-      <div class="row marg-bottom">
-        <div class="col2">
-       
-          <!--Boton eliminar-->
-          <button type="button" class="btn btn-danger float-end ">
-            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-eraser"
-              viewBox="0 0 16 16">
-              <path
-                d="M8.086 2.207a2 2 0 0 1 2.828 0l3.879 3.879a2 2 0 0 1 0 2.828l-5.5 5.5A2 2 0 0 1 7.879 15H5.12a2 2 0 0 1-1.414-.586l-2.5-2.5a2 2 0 0 1 0-2.828l6.879-6.879zm2.121.707a1 1 0 0 0-1.414 0L4.16 7.547l5.293 5.293 4.633-4.633a1 1 0 0 0 0-1.414l-3.879-3.879zM8.746 13.547 3.453 8.254 1.914 9.793a1 1 0 0 0 0 1.414l2.5 2.5a1 1 0 0 0 .707.293H7.88a1 1 0 0 0 .707-.293l.16-.16z" />
-            </svg>
-          </button>
-        </div>
+    </div>
+    <div class="row marg-bottom">
+      <div class="col2">
+
+        <!--Boton editar -->
+        <button (click)="editar(experiencia)" (click)="habilitarEditar()" *ngIf="mostrarEditar" type="button"
+          class="btn btn-primary  float-end ">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-pencil"
+            viewBox="0 0 16 16">
+            <path
+              d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z" />
+          </svg>
+        </button>
+
+        <!--Boton eliminar-->
+        <button type="button" (click)="borrar(experiencia)" class="btn btn-danger float-end ">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-eraser"
+            viewBox="0 0 16 16">
+            <path
+              d="M8.086 2.207a2 2 0 0 1 2.828 0l3.879 3.879a2 2 0 0 1 0 2.828l-5.5 5.5A2 2 0 0 1 7.879 15H5.12a2 2 0 0 1-1.414-.586l-2.5-2.5a2 2 0 0 1 0-2.828l6.879-6.879zm2.121.707a1 1 0 0 0-1.414 0L4.16 7.547l5.293 5.293 4.633-4.633a1 1 0 0 0 0-1.414l-3.879-3.879zM8.746 13.547 3.453 8.254 1.914 9.793a1 1 0 0 0 0 1.414l2.5 2.5a1 1 0 0 0 .707.293H7.88a1 1 0 0 0 .707-.293l.16-.16z" />
+          </svg>
+        </button>
+
       </div>
-</form>
- 
+
+    </div>
+  </form>
