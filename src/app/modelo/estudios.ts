@@ -1,5 +1,6 @@
 export class Estudios{
 
+    id!:number;
     estudio!:String;
     institucion!:String;
     descripcion!:String;

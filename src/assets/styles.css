@@ -13,7 +13,7 @@
       }
   
 .fondo {
-    background-color: rgba(255, 255, 255, 0.192);
+   /* background-color: #f7f4f4da;*/
 }
 .foto-pers {
     
@@ -37,7 +37,7 @@
 
 .marco-contenedor-agregar {
 
-    border: solid 3px #33658A;
+    border: solid 6px #33658A;
     margin-top:-2px;
     box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
 }

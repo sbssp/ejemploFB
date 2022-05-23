@@ -1,4 +1,4 @@
-<div class="container-lg">
+<div class="container-lg marco-contenedor-agregar">
   <div class="row titulo-contenedor-agregar">
     <h3 class=" text-center lh-lg">Agregar Experiencia</h3>
   </div>
@@ -22,12 +22,13 @@
         </label>
         <textarea [(ngModel)]="experiencia.descripcion" name="empresa" rows="5" type="text"
           class="form-control"></textarea>
-        <!--Icono experiencia-->
+        
+          <!--Icono experiencia-->
 
         <label>
           <h5>Url de la imagen</h5>
         </label>
-        <input type="text" class="form-control">
+        <input [(ngModel)]="experiencia.icono" name="icono" type="text" class="form-control">
 
         <!--Fechas--> 
         <div class="row row-bottom">

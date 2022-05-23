@@ -1,1 +1,59 @@
-<p>editar-proy works!</p>
+<div class="container-lg">
+    <div class="row titulo-contenedor-agregar">
+      <h3 class=" text-center lh-lg">Editar Proyecto</h3>
+    </div>
+    <form action="">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          
+          <!--Empresa-->
+          <label>
+            <h4>Nombre del Proyecto</h4>
+          </label>
+          <input [(ngModel)]="proyecto.nombre" name="nombre" type="text" class="form-control">
+          <!--Puesto-->
+          <label>
+            <h4>Enlace</h4>
+          </label>
+          <input [(ngModel)]="proyecto.enlace" name="enlace" type="text" class="form-control">
+          <label>
+            <!--Descripcion-->
+            <h4>Descripción</h4>
+          </label>
+          <textarea [(ngModel)]="proyecto.descripcion" name="descripcion" rows="5" type="text"
+            class="form-control"></textarea>
+          
+            <!--Icono experiencia-->
+  
+          <label>
+            <h5>Url de la imagen</h5>
+          </label>
+          <input [(ngModel)]="proyecto.imagen" name="imagen" type="text" class="form-control">
+  
+          <!--Fechas--> 
+          <div class="row row-bottom">
+            <div class="col-lg-6 row-bottom">
+  
+              <label>Desde:</label>
+              <input [(ngModel)]="proyecto.fecha_desde" name="fecha_desde" type="date" />
+              <label class=>Hasta:</label>
+              <input [(ngModel)]="proyecto.fecha_hasta" name="fecha_hasta" type="date" />
+            </div>
+            <div class="col-lg-6   float-end">
+  
+              <button *ngIf="mostrarAgregar" (click)="actualizarProy(proyecto)" (click)="habilitarAgregar()"
+                type="submit" class="btn btn-success float-end">Guardar
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                  class="bi bi-save2-fill" viewBox="0 0 16 16">
+                  <path
+                    d="M8.5 1.5A1.5 1.5 0 0 1 10 0h4a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h6c-.314.418-.5.937-.5 1.5v6h-2a.5.5 0 0 0-.354.854l2.5 2.5a.5.5 0 0 0 .708 0l2.5-2.5A.5.5 0 0 0 10.5 7.5h-2v-6z" />
+                </svg>
+              </button>
+            </div>
+          </div>
+  
+        </div>
+      </div>
+    </form>
+  
+  </div>

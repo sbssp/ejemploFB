@@ -15,7 +15,7 @@ export class ExperienciaComponent implements OnInit {
 
 
   experiencias!:Experiencia[];
-  editExp!:FormGroup;
+  
   constructor(private http:PortfolioService, private router:Router ) { }
 
 
