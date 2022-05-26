@@ -2,7 +2,7 @@
 
 .banner {
    
-    height: 150px;
+    height: 180px;
     overflow: hidden;
       }
   
@@ -15,6 +15,8 @@
 .fondo {
    /* background-color: #f7f4f4da;*/
 }
+
+
 .foto-pers {
     
     border-radius: 0% 0% 30% 30%;
@@ -24,7 +26,7 @@
   
 }
 .m-top {
-    margin-top: 3px;
+    margin-top: 5px;
   
   
 }
@@ -47,6 +49,7 @@
    
     border-radius: 5px 5px 0px 0px;
     background-color: #2f4858;
+    color: white;
   
 }
 
@@ -136,7 +139,7 @@
       right: 50px;
       
     }
-        .radialProgressBar .overlay {
+        .radialProgressBar .overlay {   
       border-radius: 50%;
       width: 80px;
       height: 80px;
@@ -145,9 +148,60 @@
       text-align: center;
       padding-top: 30%;
     }
-        .progress-10 {
-      background-image: -webkit-linear-gradient(36deg, #ddd 50%, transparent 50%), -webkit-linear-gradient(left, #028cd5 50%, #ddd 50%);
-      background-image: linear-gradient(54deg, #ddd 50%, transparent 50%), linear-gradient(90deg, #028cd5 50%, #ddd 50%);
-    }
 
-   
+    .progress-0 {
+        background-image: -webkit-linear-gradient(left, #ddd 50%, transparent 50%), -webkit-linear-gradient(left, #028cd5 50%, #ddd 50%);
+        background-image: linear-gradient(90deg, #ddd 50%, transparent 50%), linear-gradient(90deg, #028cd5 50%, #ddd 50%);
+    }
+    
+    .progress-10 {
+        background-image: -webkit-linear-gradient(36deg, #ddd 50%, transparent 50%), -webkit-linear-gradient(left, #028cd5 50%, #ddd 50%);
+        background-image: linear-gradient(54deg, #ddd 50%, transparent 50%), linear-gradient(90deg, #028cd5 50%, #ddd 50%);
+    }
+    
+    .progress-20 {
+        background-image: -webkit-linear-gradient(72deg, #ddd 50%, transparent 50%), -webkit-linear-gradient(left, #028cd5 50%, #ddd 50%);
+        background-image: linear-gradient(18deg, #ddd 50%, transparent 50%), linear-gradient(90deg, #028cd5 50%, #ddd 50%);
+    }
+    
+    .progress-30 {
+        background-image: -webkit-linear-gradient(108deg, #ddd 50%, transparent 50%), -webkit-linear-gradient(left, #028cd5 50%, #ddd 50%);
+        background-image: linear-gradient(-18deg, #ddd 50%, transparent 50%), linear-gradient(90deg, #028cd5 50%, #ddd 50%);
+    }
+    
+    .progress-40 {
+        background-image: -webkit-linear-gradient(144deg, #ddd 50%, transparent 50%), -webkit-linear-gradient(left, #028cd5 50%, #ddd 50%);
+        background-image: linear-gradient(-54deg, #ddd 50%, transparent 50%), linear-gradient(90deg, #028cd5 50%, #ddd 50%);
+    }
+    
+    .progress-50 {
+        background-image: -webkit-linear-gradient(right, #ddd 50%, transparent 50%), -webkit-linear-gradient(left, #028cd5 50%, #ddd 50%);
+        background-image: linear-gradient(-90deg, #ddd 50%, transparent 50%), linear-gradient(90deg, #028cd5 50%, #ddd 50%);
+    }
+    
+    .progress-60 {
+        background-image: -webkit-linear-gradient(left, #028cd5 50%, transparent 50%), -webkit-linear-gradient(36deg, #028cd5 50%, #ddd 50%);
+        background-image: linear-gradient(90deg, #028cd5 50%, transparent 50%), linear-gradient(54deg, #028cd5 50%, #ddd 50%);
+    }
+    
+    .progress-70 {
+        background-image: -webkit-linear-gradient(left, #028cd5 50%, transparent 50%), -webkit-linear-gradient(72deg, #028cd5 50%, #ddd 50%);
+        background-image: linear-gradient(90deg, #028cd5 50%, transparent 50%), linear-gradient(18deg, #028cd5 50%, #ddd 50%);
+    }
+    
+    .progress-80 {
+        background-image: -webkit-linear-gradient(left, #028cd5 50%, transparent 50%), -webkit-linear-gradient(108deg, #028cd5 50%, #ddd 50%);
+        background-image: linear-gradient(90deg, #028cd5 50%, transparent 50%), linear-gradient(-18deg, #028cd5 50%, #ddd 50%);
+    }
+    
+    .progress-90 {
+        background-image: -webkit-linear-gradient(left, #028cd5 50%, transparent 50%), -webkit-linear-gradient(144deg, #028cd5 50%, #ddd 50%);
+        background-image: linear-gradient(90deg, #028cd5 50%, transparent 50%), linear-gradient(-54deg, #028cd5 50%, #ddd 50%);
+    }
+    
+    .progress-100 {
+        background-image: -webkit-linear-gradient(left, #028cd5 50%, transparent 50%), -webkit-linear-gradient(right, #028cd5 50%, #ddd 50%);
+        background-image: linear-gradient(90deg, #028cd5 50%, transparent 50%), linear-gradient(-90deg, #028cd5 50%, #ddd 50%);
+    }
+    
+    

@@ -23,7 +23,7 @@
           <textarea [(ngModel)]="proyecto.descripcion" name="descripcion" rows="5" type="text"
             class="form-control"></textarea>
           
-            <!--Icono experiencia-->
+            <!--Icono -->
   
           <label>
             <h5>Url de la imagen</h5>
@@ -41,8 +41,8 @@
             </div>
             <div class="col-lg-6   float-end">
   
-              <button *ngIf="mostrarAgregar" (click)="actualizarProy(proyecto)" (click)="habilitarAgregar()"
-                type="submit" class="btn btn-success float-end">Guardar
+              <button (click)="actualizarProy(proyecto)" 
+                type="submit" class="btn btn-success float-end">Actualizar
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                   class="bi bi-save2-fill" viewBox="0 0 16 16">
                   <path

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Habilidades } from 'src/app/modelo/habilidades';
+import { PortfolioService } from 'src/app/servicios/portfolio.service';
 
 @Component({
   selector: 'app-editar-skills',
@@ -7,9 +9,40 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditarSkillsComponent implements OnInit {
 
-  constructor() { }
+
+  habilidad:Habilidades = new Habilidades();
+
+  constructor(private http:PortfolioService) { }
 
   ngOnInit(): void {
+
+  this.recibirId();
+
   }
 
+  
+  recibirId(){
+    let id:any = localStorage.getItem("id");
+    this.http.getHabilidadesId(id) 
+    .subscribe(data=>{
+      this.habilidad=data;
+    })
+   }
+  
+   actualizarSkill(habilidad:Habilidades){
+     this.http.editarHabilidades(this.habilidad)
+     .subscribe(data=>{
+       this.habilidad=data;
+       this.refrescar();
+     })
+   }
+  
+   @Output()  switchEd: EventEmitter<string> = new EventEmitter();
+   refrescar(){
+        this.switchEd.emit();
+   }
+ 
+
 }
+
+

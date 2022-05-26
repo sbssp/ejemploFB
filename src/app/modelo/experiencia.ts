@@ -6,7 +6,7 @@ export class Experiencia{
     descripcion!:String;
     fecha_desde!:String;
     fecha_hasta!:String;
-    icono!:String;
+    icono:String = "../assets/experiencia-default.png";
 
     
 }

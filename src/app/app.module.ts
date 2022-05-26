@@ -22,6 +22,9 @@ import { AgregarProyComponent } from './componentes/proyectos/agregar-proy/agreg
 import { EditarProyComponent } from './componentes/proyectos/editar-proy/editar-proy.component';
 import { AgregarSkillsComponent } from './componentes/skills/agregar-skills/agregar-skills.component';
 import { EditarSkillsComponent } from './componentes/skills/editar-skills/editar-skills.component';
+import { IndexComponent } from './contenedores/index/index.component';
+import { AdminPanelComponent } from './contenedores/admin-panel/admin-panel.component';
+import { LoginComponent } from './componentes/login/login.component';
 
 @NgModule({
   declarations: [
@@ -40,14 +43,16 @@ import { EditarSkillsComponent } from './componentes/skills/editar-skills/editar
     AgregarProyComponent,
     EditarProyComponent,
     AgregarSkillsComponent,
-    EditarSkillsComponent
+    EditarSkillsComponent,
+    IndexComponent,
+    AdminPanelComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    AppRoutingModule,
     ReactiveFormsModule,
 
   ],

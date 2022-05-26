@@ -1,8 +1,6 @@
 
 
-import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
-import { Router } from '@angular/router';
+import {  Component, OnInit } from '@angular/core';
 import { Experiencia } from 'src/app/modelo/experiencia';
 import { PortfolioService } from 'src/app/servicios/portfolio.service';
 
@@ -16,7 +14,7 @@ export class ExperienciaComponent implements OnInit {
 
   experiencias!:Experiencia[];
   
-  constructor(private http:PortfolioService, private router:Router ) { }
+  constructor(private http:PortfolioService ) { }
 
 
   //Métodos html
@@ -32,7 +30,6 @@ export class ExperienciaComponent implements OnInit {
   
   editar(experiencia:Experiencia):void{
     localStorage.setItem("id", experiencia.id.toString());
-    window.scroll(0,410);
 
    }
 
@@ -40,34 +37,34 @@ export class ExperienciaComponent implements OnInit {
      this.http.borrarExperiencia(experiencia)
      .subscribe(data=>{
        this.experiencias=this.experiencias;
-       alert("bloque borrado")
-       window.location.reload();
+       this.ngOnInit();
+
      })
    }
    
    
- //Mostrar/esconder formularios
- public mostrar:boolean = true;
- public esconder:boolean = false;
- public mostrarAgregar:boolean = true;
- public esconderAgregar:boolean = false;
- public mostrarEditar:boolean = true;
- public esconderEditar:boolean = false;
+  //Mostrar/esconder formularios
 
- cambiarInput() {
-   this.mostrar = !this.mostrar;
-   this.esconder = !this.esconder;
-   }
-
- habilitarAgregar() {
-   this.mostrarAgregar = !this.mostrarAgregar;
-   this.esconderAgregar = !this.esconderAgregar;
-     }
+  public mostrarAgregar:boolean = true;
+  public esconderAgregar:boolean = false;
+  public mostrarEditar:boolean = true;
+  public esconderEditar:boolean = false;
+ 
   
-  habilitarEditar() {
-    this.mostrarEditar = !this.mostrarEditar;
-    this.esconderEditar = !this.esconderEditar;
-     }
-
+ 
+  switchAgregar() {
+    this.mostrarAgregar = !this.mostrarAgregar;
+    this.esconderAgregar = !this.esconderAgregar;
+    this.ngOnInit();
+      }
+   
+   switchEditar() {
+     this.mostrarEditar = !this.mostrarEditar;
+     this.esconderEditar = !this.esconderEditar;
+     this.ngOnInit();
+   }
+ 
+  
+ 
 
     }

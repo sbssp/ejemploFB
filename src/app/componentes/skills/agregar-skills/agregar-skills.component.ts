@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Habilidades } from 'src/app/modelo/habilidades';
+import { PortfolioService } from 'src/app/servicios/portfolio.service';
 
 @Component({
   selector: 'app-agregar-skills',
@@ -7,9 +9,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AgregarSkillsComponent implements OnInit {
 
-  constructor() { }
 
-  ngOnInit(): void {
+  habilidad = new Habilidades();
+
+  constructor(private http:PortfolioService) { }
+
+  ngOnInit() {
+    
+    }
+
+  guardarHabilidad(habilidad:Habilidades){
+    this.http.createHabilidades(habilidad)
+    .subscribe(data=>{
+      this.refrescar();
+    })
   }
+  
+  @Output()  switchAg: EventEmitter<string> = new EventEmitter();
+  refrescar(){
+       this.switchAg.emit();
+  }
+
 
 }

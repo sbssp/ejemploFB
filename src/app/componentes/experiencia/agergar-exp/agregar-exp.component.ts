@@ -1,7 +1,6 @@
 
 
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { Experiencia } from 'src/app/modelo/experiencia';
 import { PortfolioService } from 'src/app/servicios/portfolio.service';
 
@@ -13,40 +12,23 @@ import { PortfolioService } from 'src/app/servicios/portfolio.service';
 
 
 
-export class AgregarExp implements OnInit {
+export class AgregarExp {
   
 experiencia= new Experiencia();
 
-  constructor(private http:PortfolioService, private router:Router ) { }
-
-  ngOnInit() {
-    
-    }
+  constructor(private http:PortfolioService) { }
 
   
   GuardarExperiencia(experiencia:Experiencia){
     this.http.createExperiencia(experiencia)
     .subscribe(data=>{
-      alert("Carga Exitosa!");
-      window.location.reload();
+      this.refrescar();   
     })
   }
   
+  @Output()  switchAg: EventEmitter<string> = new EventEmitter();
+  refrescar(){
+       this.switchAg.emit();
+  }
 
-    //Mostrar/esconder formularios
-    public mostrar:boolean = true;
-    public esconder:boolean = false;
-    public mostrarAgregar:boolean = true;
-    public esconderAgregar:boolean = false;
-  
-    cambiarInput() {
-      this.mostrar = !this.mostrar;
-      this.esconder = !this.esconder;
-      }
-
-    habilitarAgregar() {
-      this.mostrarAgregar = !this.mostrarAgregar;
-      this.esconderAgregar = !this.esconderAgregar;
-        }
-  
 }

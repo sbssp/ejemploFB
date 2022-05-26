@@ -13,7 +13,7 @@
     <!--Boton Agregar Experiencia-->
     <div class="col-8">
 
-      <button *ngIf="mostrarEditar" (click)="habilitarAgregar()" type="button" class="float-end  btn-agregar">Agregar
+      <button *ngIf="mostrarEditar" (click)="switchAgregar()" type="button" class="float-end  btn-agregar">Agregar
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg"
           viewBox="0 0 16 16">
           <path fill-rule="evenodd"
@@ -26,8 +26,8 @@
 
 
 <!--Componentes de Agregar y edicion-->
-<app-agregar-exp *ngIf="esconderAgregar"></app-agregar-exp>
-<app-editar-exp *ngIf="esconderEditar"></app-editar-exp>
+<app-agregar-exp (switchAg)="switchAgregar()" *ngIf="esconderAgregar"></app-agregar-exp>
+<app-editar-exp (switchEd)="switchEditar()" *ngIf="esconderEditar"></app-editar-exp>
 
 
 
@@ -41,7 +41,7 @@
 
         <!--Icono experiencia-->
         <div class="row ">
-          <img *ngIf="mostrar" src={{experiencia.icono}} class="img-fluid img_thumbnail" alt="experiencia">
+          <img  src={{experiencia.icono}} class="img-fluid img_thumbnail" alt="experiencia">
         </div>
       </div>
 
@@ -49,8 +49,8 @@
         <div class="row">
           <div class="col-10 fs-2 text lh-lg border-bottom  ">
 
-            <h3 *ngIf="mostrar">{{experiencia.empresa}}</h3>
-            <h5 *ngIf="mostrar">{{experiencia.puesto}}</h5>
+            <h3 >{{experiencia.empresa}}</h3>
+            <h5 >{{experiencia.puesto}}</h5>
 
           </div>
         </div>
@@ -58,14 +58,14 @@
 
         <!--Descripcion-->
         <div> 
-          <span *ngIf="mostrar" class="descripcion"> {{experiencia.descripcion}}</span>
+          <span  class="descripcion"> {{experiencia.descripcion}}</span>
         </div>
 
 
         <!--Fecha desde/hasta-->
         <div class="row">
           <div class="col fecha_desde ">
-            <span *ngIf="mostrar" class="fecha">{{experiencia.fecha_desde}} / {{experiencia.fecha_hasta}}</span>
+            <span  class="fecha">{{experiencia.fecha_desde}} / {{experiencia.fecha_hasta}}</span>
             <div>
             </div>
           </div>
@@ -78,7 +78,7 @@
       <div class="col2">
 
         <!--Boton editar -->
-        <button (click)="editar(experiencia)" (click)="habilitarEditar()" *ngIf="mostrarEditar" type="button"
+        <button (click)="editar(experiencia)" (click)="switchEditar()" *ngIf="mostrarAgregar" type="button"
           class="btn btn-primary  float-end ">
           <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-pencil"
             viewBox="0 0 16 16">

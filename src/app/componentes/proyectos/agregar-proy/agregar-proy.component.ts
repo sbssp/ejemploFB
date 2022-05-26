@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { Proyectos } from 'src/app/modelo/proyectos';
 import { PortfolioService } from 'src/app/servicios/portfolio.service';
@@ -14,7 +14,7 @@ export class AgregarProyComponent implements OnInit {
 
 proyecto = new Proyectos();
 
-  constructor(private http:PortfolioService, private router:Router ) { }
+  constructor(private http:PortfolioService) { }
 
   ngOnInit() {
     
@@ -24,26 +24,13 @@ proyecto = new Proyectos();
   guardarProyecto(proyecto:Proyectos){
     this.http.CreateProyectos(proyecto)
     .subscribe(data=>{
-      alert("Carga Exitosa!");
-      window.location.reload();
+      this.refrescar();
     })
   }
   
+  @Output()  switchAg: EventEmitter<string> = new EventEmitter();
+  refrescar(){
+       this.switchAg.emit();
+  }
 
-    //Mostrar/esconder formularios
-    public mostrar:boolean = true;
-    public esconder:boolean = false;
-    public mostrarAgregar:boolean = true;
-    public esconderAgregar:boolean = false;
-  
-    cambiarInput() {
-      this.mostrar = !this.mostrar;
-      this.esconder = !this.esconder;
-      }
-
-    habilitarAgregar() {
-      this.mostrarAgregar = !this.mostrarAgregar;
-      this.esconderAgregar = !this.esconderAgregar;
-        }
-  
 }

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {  Component, OnInit } from '@angular/core';
+import { Estudios } from 'src/app/modelo/estudios';
+import { PortfolioService } from 'src/app/servicios/portfolio.service';
 
 @Component({
   selector: 'app-estudios',
@@ -7,9 +9,57 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EstudiosComponent implements OnInit {
 
-  constructor() { }
+  estudios!:Estudios[];
+  
+  constructor(private http:PortfolioService) { }
 
+
+  //Métodos html
   ngOnInit(): void {
+    this.http.getEstudios()
+    .subscribe(data=>{
+      this.estudios=data;
+    });
+
+      
+
   }
+  
+  editar(estudio:Estudios):void{
+    localStorage.setItem("id", estudio.id.toString());
+
+   }
+
+   borrar(estudio:Estudios){
+     this.http.borrarEstdusios(estudio)
+     .subscribe(data=>{
+       this.estudios=this.estudios;
+       this.ngOnInit();
+      })
+   }
+   
+   
+
+ //Mostrar/esconder formularios
+
+ public mostrarAgregar:boolean = true;
+ public esconderAgregar:boolean = false;
+ public mostrarEditar:boolean = true;
+ public esconderEditar:boolean = false;
+
+ 
+
+ switchAgregar() {
+   this.mostrarAgregar = !this.mostrarAgregar;
+   this.esconderAgregar = !this.esconderAgregar;
+   this.ngOnInit();
+     }
+  
+  switchEditar() {
+    this.mostrarEditar = !this.mostrarEditar;
+    this.esconderEditar = !this.esconderEditar;
+    this.ngOnInit(); 
+  }
+
 
 }
