@@ -30,7 +30,6 @@ export class ExperienciaComponent implements OnInit {
   
   editar(experiencia:Experiencia):void{
     localStorage.setItem("id", experiencia.id.toString());
-
    }
 
    borrar(experiencia:Experiencia){

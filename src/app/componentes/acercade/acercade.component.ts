@@ -22,6 +22,9 @@ export class AcercadeComponent implements OnInit {
     })
   }
   
+  editar(persona:Persona):void{
+    localStorage.setItem("id", persona.id.toString());
+   }
 
   public mostrar:boolean = true;
   public esconder:boolean = false;
@@ -29,6 +32,8 @@ export class AcercadeComponent implements OnInit {
   cambiarInput() {
     this.mostrar = !this.mostrar;
     this.esconder = !this.esconder;
+    this.ngOnInit();
     }
+
 }
 

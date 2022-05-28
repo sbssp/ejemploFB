@@ -1,39 +1,40 @@
-
+<app-editar-acercade *ngIf="esconder" (switchEd)="cambiarInput()"></app-editar-acercade>
 
 <!--INFORMACION PERSONAL-->
-<div *ngFor="let persona of personas" class="container-lg ">
+<div *ngFor="let persona of personas" class="container ">
 
-  <div class="row">
-    <div class="col-3">
+  <div *ngIf="mostrar" class="row justify-content-start">
+    <div class="col-lg-3 ">
       <!--Imagen Personal-->
-      <img *ngIf="mostrar" src="../assets/foto.png" class="img-fluid img_thumbnail foto-pers" alt="Foto personal">
-      <label *ngIf = "esconder" >Url de la imagen</label>
-      <input *ngIf = "esconder" type="text" class="form-control" value = {{persona.fotopers}}>
-
+      <div class="container card text-center  align-items-center border-0">
+        <img *ngIf="mostrar" src="{{persona.fotopers}}" class="foto-pers " alt="Foto personal">
+</div>
+<div class="card  text-center border-0">
+        <h4>{{persona.nombre}} {{persona.apellido}}</h4>
+        <h5>{{persona.email}}</h5>
+        <h5><a href={{persona.link}}>{{persona.link}}</a></h5>
+      </div>
     </div>
-
-
     <!--Campos de información Personal-->
-
-    <div class="col-9">
+    <div class="col-lg-9">
       <div class="row">
-        <div class="col-6">
+        <div class="col">
           <div class="fs-2 text lh-lg border-bottom text-primary">
             <h3>Acerca de...</h3>
           </div>
         </div>
-        <div class="col-6">
-          <!--Boton Guardar Bloque Experiencia-->
-          <button type="button" class="btn btn-success float-end btn-top">Guardar
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-save2-fill"
-              viewBox="0 0 16 16">
-              <path
-                d="M8.5 1.5A1.5 1.5 0 0 1 10 0h4a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h6c-.314.418-.5.937-.5 1.5v6h-2a.5.5 0 0 0-.354.854l2.5 2.5a.5.5 0 0 0 .708 0l2.5-2.5A.5.5 0 0 0 10.5 7.5h-2v-6z" />
-            </svg>
-          </button>
+      </div>
+      <div class="row">
+        <div class="fs-6 text">
+          <span *ngIf="mostrar">{{persona.resumen}}</span>
+        </div>
+      </div>
 
+      <div class="row row-bottom">
+        <div class="col">
           <!--Boton editar-->
-          <button type="button" class="btn btn-primary  float-end btn-top " (click)="cambiarInput()">Editar
+          <button type="button" class="btn btn-primary float-end" (click)="editar(persona)"
+            (click)="cambiarInput()">Editar
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil"
               viewBox="0 0 16 16">
               <path
@@ -42,16 +43,6 @@
           </button>
         </div>
       </div>
-
-      <div class="row">
-        <div class="fs-6 text">
-          <span *ngIf="mostrar">{{persona.resumen}}</span>
-
-          <textarea *ngIf = "esconder" rows = "5" type="text" class="form-control" value = {{persona.resumen}}></textarea>
-        </div>
-      </div>
     </div>
   </div>
 </div>
-
-

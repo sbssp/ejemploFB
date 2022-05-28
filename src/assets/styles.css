@@ -2,14 +2,14 @@
 
 .banner {
    
-    height: 180px;
+    height: 320px;
     overflow: hidden;
       }
   
 .banner-img {
    
-    position: relative;
-    bottom: 92px;
+ /*   position: relative;
+    bottom: 92px;*/
       }
   
 .fondo {
@@ -18,17 +18,14 @@
 
 
 .foto-pers {
-    
-    border-radius: 0% 0% 30% 30%;
-    /*position: relative;
-    bottom: 15px;*/
-    
-  
+    border-radius: 60% 60% 60% 60%;
+    max-width: 300px;
+    height: auto;     
+    border:none !important;
 }
 .m-top {
     margin-top: 5px;
-  
-  
+ 
 }
 .marco-contenedor {
     

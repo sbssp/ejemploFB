@@ -14,9 +14,7 @@ export class EditarAcercadeComponent implements OnInit {
   constructor(private http:PortfolioService) { }
 
   ngOnInit(): void {
-
   this.recibirId();
-
   }
 
   recibirId(){
@@ -34,6 +32,7 @@ export class EditarAcercadeComponent implements OnInit {
        this.refrescar();
      })
    }
+  
   
    @Output()  switchEd: EventEmitter<string> = new EventEmitter();
    refrescar(){

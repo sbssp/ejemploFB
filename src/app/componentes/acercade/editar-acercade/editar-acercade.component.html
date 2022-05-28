@@ -16,6 +16,14 @@
             <h4>Apellido</h4>
           </label>
           <input [(ngModel)]="persona.apellido" name="apellido" type="text" class="form-control">
+          <label> 
+          <h4>E-mail</h4>
+        </label>
+        <input [(ngModel)]="persona.email" name="email" type="text" class="form-control">
+        <label> 
+          <h4>Linkedin</h4>
+        </label>
+        <input [(ngModel)]="persona.link" name="link" type="text" class="form-control">
           <label>
             <!--Descripcion-->
             <h4>Resumen</h4>
@@ -40,7 +48,7 @@
             </div>
             <div class="col-lg-6   float-end">
   
-              <button (click)="actualizarPersona(persona)" 
+              <button (click)="actualizarPersona(persona)"
                 type="submit" class="btn btn-success float-end">Actualizar
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                   class="bi bi-save2-fill" viewBox="0 0 16 16">
