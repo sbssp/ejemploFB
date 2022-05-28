@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { EditarProyComponent } from './editar-proy.component';
 
 describe('EditarProyComponent', () => {
@@ -8,7 +8,8 @@ describe('EditarProyComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ EditarProyComponent ]
+      declarations: [ EditarProyComponent ],
+      imports: [HttpClientTestingModule]
     })
     .compileComponents();
   });

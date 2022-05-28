@@ -13,7 +13,7 @@ export class AcercadeComponent implements OnInit {
 
   personas!:Persona[];
   
-  constructor(private http:PortfolioService, private router:Router ) { }
+  constructor(private http:PortfolioService) { }
 
   ngOnInit(): void {
     this.http.getPersona()

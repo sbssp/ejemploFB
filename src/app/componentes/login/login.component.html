@@ -1,1 +1,33 @@
-<p>login works!</p>
+<div *ngIf="quitarLogin" class="container-lg">
+  <div class="card align-items-center">
+    <div class="card-header">
+      <h3>Formulario de login</h3>
+    </div>
+    <div class="card-body">
+      <form [formGroup]="loginForm" id="loginForm" (ngSubmit)="login()">
+        <table class="table">
+          <tbody>
+            <th>
+              <tr>
+                <label>Email:</label>
+              </tr>
+              <tr>
+                <label>Password</label>
+              </tr>
+            </th>
+            <th>
+              <tr>
+                <input type="email" formControlName="email" id="email">
+              </tr>
+              <tr>
+                <input type="password" formControlName="password" id="password">
+              </tr>
+            </th>
+          </tbody>
+          <button (click)="login()" (click)="switchLogin()" class="btn btn-success" type="submit">Enviar</button>
+        </table>
+      </form>
+    </div>
+  </div>
+</div>
+<app-admin-panel *ngIf="habilitarAdmin"></app-admin-panel>

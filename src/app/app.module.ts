@@ -10,10 +10,7 @@ import { EstudiosComponent } from './componentes/estudios/estudios.component';
 import { SkillsComponent } from './componentes/skills/skills.component';
 import { ProyectosComponent } from './componentes/proyectos/proyectos.component';
 import { AgregarExp } from './componentes/experiencia/agergar-exp/agregar-exp.component';
-import { PortfolioService } from './servicios/portfolio.service';
-import { HttpClientModule} from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EditarExpComponent } from './componentes/experiencia/editar-exp/editar-exp.component';
 import { AgregarEstComponent } from './componentes/estudios/agregar-est/agregar-est.component';
 import { EditarEstComponent } from './componentes/estudios/editar-est/editar-est.component';
@@ -24,7 +21,10 @@ import { AgregarSkillsComponent } from './componentes/skills/agregar-skills/agre
 import { EditarSkillsComponent } from './componentes/skills/editar-skills/editar-skills.component';
 import { IndexComponent } from './contenedores/index/index.component';
 import { AdminPanelComponent } from './contenedores/admin-panel/admin-panel.component';
+import { HttpClientModule } from '@angular/common/http';
+import { PortfolioService } from './servicios/portfolio.service';
 import { LoginComponent } from './componentes/login/login.component';
+import { FormBuilder } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -49,13 +49,14 @@ import { LoginComponent } from './componentes/login/login.component';
     LoginComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule,
     FormsModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule
 
   ],
+  
   providers: [PortfolioService],
   bootstrap: [AppComponent]
 })

@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { EditarAcercadeComponent } from './editar-acercade.component';
 
 describe('EditarAcercadeComponent', () => {
@@ -8,7 +8,8 @@ describe('EditarAcercadeComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ EditarAcercadeComponent ]
+      declarations: [ EditarAcercadeComponent ],
+      imports:[HttpClientTestingModule]
     })
     .compileComponents();
   });

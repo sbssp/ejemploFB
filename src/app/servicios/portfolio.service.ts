@@ -1,57 +1,56 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { AcercadeComponent } from '../componentes/acercade/acercade.component';
 import { Estudios } from '../modelo/estudios';
 import { Experiencia } from '../modelo/experiencia';
 import { Habilidades } from '../modelo/habilidades';
 import { Persona } from '../modelo/persona';
 import { Proyectos } from '../modelo/proyectos';
 
+
+
 @Injectable({
   providedIn: 'root'
 })
-export class PortfolioService {
 
+export class PortfolioService {
 
   constructor(private http:HttpClient) {}
 
-  //Urls metodos Experiencia
-    UrlExp='http://localhost:8080/ver/experiencia';
-    UrlExpid='http://localhost:8080/buscar/experiencia';
-    UrlExpEdit='http://localhost:8080/editar/experiencia';
-    UrlExpDelete='http://localhost:8080/borrar/experiencia';
-    UrlExpadd='http://localhost:8080/new/experiencia';
+//Urls metodos Experiencia
+private UrlExp='http://localhost:8080/ver/experiencia';
+private UrlExpid='http://localhost:8080/buscar/experiencia';
+private UrlExpEdit='http://localhost:8080/editar/experiencia';
+private UrlExpDelete='http://localhost:8080/borrar/experiencia';
+private UrlExpadd='http://localhost:8080/new/experiencia';
 
-  //Urls metodos Proyectos
-    UrlProy='http://localhost:8080/ver/proyectos';
-    UrlProyid='http://localhost:8080/buscar/proyectos';
-    UrlProyEdit='http://localhost:8080/editar/proyectos';
-    UrlProyDelete='http://localhost:8080/borrar/proyectos';
-    Urlproyadd='http://localhost:8080/new/proyectos';
+//Urls metodos Proyectos
+private UrlProy='http://localhost:8080/ver/proyectos';
+private UrlProyid='http://localhost:8080/buscar/proyectos';
+private UrlProyEdit='http://localhost:8080/editar/proyectos';
+private UrlProyDelete='http://localhost:8080/borrar/proyectos';
+private Urlproyadd='http://localhost:8080/new/proyectos';
 
-    //Urls metodos Estudios
-    UrlEst='http://localhost:8080/ver/estudios';
-    UrlEstid='http://localhost:8080/buscar/estudios';
-    UrlEstEdit='http://localhost:8080/editar/estudios';
-    UrlEstDelete='http://localhost:8080/borrar/estudios';
-    UrlEstadd='http://localhost:8080/new/estudios';
+//Urls metodos Estudios
+private UrlEst='http://localhost:8080/ver/estudios';
+private UrlEstid='http://localhost:8080/buscar/estudios';
+private UrlEstEdit='http://localhost:8080/editar/estudios';
+private UrlEstDelete='http://localhost:8080/borrar/estudios';
+private UrlEstadd='http://localhost:8080/new/estudios';
 
-     //Urls metodos Habilidades
-     UrlSkills='http://localhost:8080/ver/habilidades';
-     UrlSkillsId='http://localhost:8080/buscar/habilidades';
-     UrlSkillsEdit='http://localhost:8080/editar/habilidades';
-     UrlSkillsDelete='http://localhost:8080/borrar/habilidades';
-     UrlSkillsAdd='http://localhost:8080/new/habilidades';
-   
-  
-     //Urls metodos Persona
-     UrlPersona='http://localhost:8080/ver/persona';
-     UrlPersonaId='http://localhost:8080/buscar/persona';
-     UrlPersonaEdit='http://localhost:8080/editar/persona';
-     //UrlPersonaDelete='http://localhost:8080/borrar/persona';
-     //UrlPersonaAdd='http://localhost:8080/new/persona';
+ //Urls metodos Habilidades
+ private UrlSkills='http://localhost:8080/ver/habilidades';
+ private UrlSkillsId='http://localhost:8080/buscar/habilidades';
+ private UrlSkillsEdit='http://localhost:8080/editar/habilidades';
+ private UrlSkillsDelete='http://localhost:8080/borrar/habilidades';
+ private UrlSkillsAdd='http://localhost:8080/new/habilidades';
 
 
+ //Urls metodos Persona
+ private UrlPersona='http://localhost:8080/ver/persona';
+ private UrlPersonaId='http://localhost:8080/buscar/persona';
+ private UrlPersonaEdit='http://localhost:8080/editar/persona';
+ //UrlPersonaDelete='http://localhost:8080/borrar/persona';
+ //UrlPersonaAdd='http://localhost:8080/new/persona';
 
   //Metodos persona
 

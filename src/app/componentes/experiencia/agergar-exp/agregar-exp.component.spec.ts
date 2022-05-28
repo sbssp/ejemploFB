@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { AgregarExp } from './agregar-exp.component';
 
 describe('FormularioExpComponent', () => {
@@ -8,7 +8,8 @@ describe('FormularioExpComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AgregarExp ]
+      declarations: [ AgregarExp ],
+      imports: [HttpClientTestingModule]
     })
     .compileComponents();
   });

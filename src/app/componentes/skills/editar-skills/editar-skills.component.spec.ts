@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { EditarSkillsComponent } from './editar-skills.component';
 
 describe('EditarSkillsComponent', () => {
@@ -8,7 +8,9 @@ describe('EditarSkillsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ EditarSkillsComponent ]
+      declarations: [ EditarSkillsComponent ],
+      imports: [ HttpClientTestingModule ]
+
     })
     .compileComponents();
   });

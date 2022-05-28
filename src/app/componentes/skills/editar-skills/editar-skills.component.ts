@@ -6,6 +6,7 @@ import { PortfolioService } from 'src/app/servicios/portfolio.service';
   selector: 'app-editar-skills',
   templateUrl: './editar-skills.component.html',
   styleUrls: ['./editar-skills.component.css']
+
 })
 export class EditarSkillsComponent implements OnInit {
 
@@ -15,9 +16,7 @@ export class EditarSkillsComponent implements OnInit {
   constructor(private http:PortfolioService) { }
 
   ngOnInit(): void {
-
   this.recibirId();
-
   }
 
   

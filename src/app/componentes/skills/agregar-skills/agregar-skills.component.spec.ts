@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { AgregarSkillsComponent } from './agregar-skills.component';
 
 describe('AgregarSkillsComponent', () => {
@@ -8,7 +8,8 @@ describe('AgregarSkillsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AgregarSkillsComponent ]
+      declarations: [ AgregarSkillsComponent ],
+      imports: [HttpClientTestingModule]
     })
     .compileComponents();
   });

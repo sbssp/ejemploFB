@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { AgregarProyComponent } from './agregar-proy.component';
 
 describe('AgregarProyComponent', () => {
@@ -8,7 +8,8 @@ describe('AgregarProyComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AgregarProyComponent ]
+      declarations: [ AgregarProyComponent ],
+      imports: [HttpClientTestingModule]
     })
     .compileComponents();
   });

@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { AcercadeComponent } from './acercade.component';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+
 
 describe('AcercadeComponent', () => {
   let component: AcercadeComponent;
@@ -8,7 +9,8 @@ describe('AcercadeComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AcercadeComponent ]
+      declarations: [ AcercadeComponent ],
+      imports:[HttpClientTestingModule]
     })
     .compileComponents();
   });
