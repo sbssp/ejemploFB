@@ -23,8 +23,13 @@ import { IndexComponent } from './contenedores/index/index.component';
 import { AdminPanelComponent } from './contenedores/admin-panel/admin-panel.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PortfolioService } from './servicios/portfolio.service';
-import { LoginComponent } from './componentes/login/login.component';
-import { FormBuilder } from '@angular/forms';
+import { LoginComponent } from './auth/login/login.component';
+import { RegisterComponent } from './auth/register/register.component';
+import { ProfileComponent } from './auth/profile/profile.component';
+import { BoardAdminComponent } from './auth/board-admin/board-admin.component';
+import { BoardModeratorComponent } from './auth/board-moderator/board-moderator.component';
+import { BoardUserComponent } from './auth/board-user/board-user.component';
+import { authInterceptorProviders } from './_helpers/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -46,7 +51,12 @@ import { FormBuilder } from '@angular/forms';
     EditarSkillsComponent,
     IndexComponent,
     AdminPanelComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent,
+    ProfileComponent,
+    BoardAdminComponent,
+    BoardModeratorComponent,
+    BoardUserComponent
   ],
   imports: [
     HttpClientModule,
@@ -57,7 +67,7 @@ import { FormBuilder } from '@angular/forms';
 
   ],
   
-  providers: [PortfolioService],
+  providers: [authInterceptorProviders, PortfolioService],
   bootstrap: [AppComponent]
 })
 export class AppModule { 
