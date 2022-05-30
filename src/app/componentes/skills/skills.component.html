@@ -3,7 +3,7 @@
 <div class="container-lg titulo-contenedor bloque-tarjeta">
   <div class="row">
 
-    <div class="col 8">
+    <div #scrollAgregar class="col 8">
       <div class="fs-2 text lh-lg titulo-css">
         <h2>Hard & Soft Skills</h2>
       </div>
@@ -12,7 +12,7 @@
 
     <!--Boton Agregar Bloque Habilidades-->
     <div class="col-6">
-      <button *ngIf="mostrarEditar" (click)="switchAgregar()"  type="button" class="float-end  btn-agregar">Agregar
+      <button *ngIf="mostrarEditar" (click)="switchAgregar()" (click)="scroll(scrollAgregar)" type="button" class="float-end  btn-agregar">Agregar
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg"
           viewBox="0 0 16 16">
           <path fill-rule="evenodd"
@@ -24,7 +24,7 @@
   </div>
 </div>
 
-
+<div #scrollEditar></div>
 <app-agregar-skills (switchAg) ="switchAgregar()" *ngIf="esconderAgregar"></app-agregar-skills>
 <app-editar-skills  (switchEd) ="switchEditar()" *ngIf="esconderEditar"></app-editar-skills>
 
@@ -51,7 +51,7 @@
           </svg>
         </button>
         <!--Boton eliminar-->
-        <button *ngIf="mostrarEditar" (click)="borrar(habilidad)" type="button" class="btn btn-danger float-end ">
+        <button *ngIf="mostrarEditar" (click)="borrar(habilidad)" (click)="scroll(scrollEditar)" type="button" class="btn btn-danger float-end ">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eraser"
             viewBox="0 0 16 16">
             <path

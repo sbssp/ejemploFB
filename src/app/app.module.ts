@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './componentes/header/header.component';
 import { AcercadeComponent } from './componentes/acercade/acercade.component';
 import { ExperienciaComponent } from './componentes/experiencia/experiencia.component';
 import { EstudiosComponent } from './componentes/estudios/estudios.component';
@@ -22,19 +21,18 @@ import { EditarSkillsComponent } from './componentes/skills/editar-skills/editar
 import { IndexComponent } from './contenedores/index/index.component';
 import { AdminPanelComponent } from './contenedores/admin-panel/admin-panel.component';
 import { HttpClientModule } from '@angular/common/http';
-import { PortfolioService } from './servicios/portfolio.service';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
-import { ProfileComponent } from './auth/profile/profile.component';
-import { BoardAdminComponent } from './auth/board-admin/board-admin.component';
-import { BoardModeratorComponent } from './auth/board-moderator/board-moderator.component';
-import { BoardUserComponent } from './auth/board-user/board-user.component';
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
+import { IndexAcercadeComponent } from './componentes-publicos/index-acercade/index-acercade.component';
+import { IndexExperienciaComponent } from './componentes-publicos/index-experiencia/index-experiencia.component';
+import { IndexEstudiosComponent } from './componentes-publicos/index-estudios/index-estudios.component';
+import { IndexSkillsComponent } from './componentes-publicos/index-skills/index-skills.component';
+import { IndexProyectosComponent } from './componentes-publicos/index-proyectos/index-proyectos.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
     AcercadeComponent,
     ExperienciaComponent,
     EstudiosComponent,
@@ -53,10 +51,11 @@ import { authInterceptorProviders } from './_helpers/auth.interceptor';
     AdminPanelComponent,
     LoginComponent,
     RegisterComponent,
-    ProfileComponent,
-    BoardAdminComponent,
-    BoardModeratorComponent,
-    BoardUserComponent
+    IndexAcercadeComponent,
+    IndexExperienciaComponent,
+    IndexEstudiosComponent,
+    IndexSkillsComponent,
+    IndexProyectosComponent
   ],
   imports: [
     HttpClientModule,
@@ -67,9 +66,12 @@ import { authInterceptorProviders } from './_helpers/auth.interceptor';
 
   ],
   
-  providers: [authInterceptorProviders, PortfolioService],
+  providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { 
   
+
+
+
 }

@@ -21,14 +21,14 @@ export class EditarProyComponent implements OnInit {
   
   recibirId(){
     let id:any = localStorage.getItem("id");
-    this.http.getProyectosId(id) 
+    this.http.getProyectoId(id) 
     .subscribe(data=>{
       this.proyecto=data;
     })
    }
   
    actualizarProy(proyecto:Proyectos){
-     this.http.editarProyectos(this.proyecto)
+     this.http.editarProyecto(this.proyecto)
      .subscribe(data=>{
        this.proyecto=data;
        this.refrescar();

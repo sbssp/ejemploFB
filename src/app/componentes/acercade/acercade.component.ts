@@ -35,5 +35,10 @@ export class AcercadeComponent implements OnInit {
     this.ngOnInit();
     }
 
+  
+   scroll(el: HTMLElement) {
+      el.scrollIntoView();
+  }
+  
 }
 

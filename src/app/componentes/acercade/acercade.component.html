@@ -1,3 +1,4 @@
+<div #scrollEditar></div>
 <app-editar-acercade *ngIf="esconder" (switchEd)="cambiarInput()"></app-editar-acercade>
 
 <!--INFORMACION PERSONAL-->
@@ -9,6 +10,7 @@
       <div class="container card text-center  align-items-center border-0">
         <img *ngIf="mostrar" src="{{persona.fotopers}}" class="foto-pers " alt="Foto personal">
 </div>
+
 <div class="card  text-center border-0">
         <h4>{{persona.nombre}} {{persona.apellido}}</h4>
         <h5>{{persona.email}}</h5>
@@ -33,7 +35,7 @@
       <div class="row row-bottom">
         <div class="col">
           <!--Boton editar-->
-          <button type="button" class="btn btn-primary float-end" (click)="editar(persona)"
+          <button type="button" class="btn btn-primary float-end" (click)="scroll(scrollEditar)" (click)="editar(persona)"
             (click)="cambiarInput()">Editar
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil"
               viewBox="0 0 16 16">

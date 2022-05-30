@@ -31,7 +31,7 @@ export class EstudiosComponent implements OnInit {
    }
 
    borrar(estudio:Estudios){
-     this.http.borrarEstdusios(estudio)
+     this.http.borrarEstudios(estudio)
      .subscribe(data=>{
        this.estudios=this.estudios;
        this.ngOnInit();
@@ -60,6 +60,11 @@ export class EstudiosComponent implements OnInit {
     this.esconderEditar = !this.esconderEditar;
     this.ngOnInit(); 
   }
+
+
+  scroll(el: HTMLElement) {
+    el.scrollIntoView();
+}
 
 
 }

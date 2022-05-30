@@ -1,7 +1,7 @@
 
 
-<app-acercade></app-acercade>
-<app-experiencia></app-experiencia>
-<app-estudios></app-estudios>
-<app-skills></app-skills>
-<app-proyectos></app-proyectos>
+<app-acercade *ngIf="isLoggedIn"></app-acercade>
+<app-experiencia *ngIf="isLoggedIn"></app-experiencia>
+<app-estudios *ngIf="isLoggedIn"></app-estudios>
+<app-skills *ngIf="isLoggedIn"></app-skills>
+<app-proyectos *ngIf="isLoggedIn"></app-proyectos>

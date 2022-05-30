@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BoardAdminComponent } from './board-admin.component';
+import { IndexExperienciaComponent } from './index-experiencia.component';
 
-describe('BoardAdminComponent', () => {
-  let component: BoardAdminComponent;
-  let fixture: ComponentFixture<BoardAdminComponent>;
+describe('IndexExperienciaComponent', () => {
+  let component: IndexExperienciaComponent;
+  let fixture: ComponentFixture<IndexExperienciaComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BoardAdminComponent ]
+      declarations: [ IndexExperienciaComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BoardAdminComponent);
+    fixture = TestBed.createComponent(IndexExperienciaComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

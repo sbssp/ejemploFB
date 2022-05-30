@@ -4,7 +4,7 @@
 <div class="container-lg titulo-contenedor bloque-tarjeta">
   <div class="row">
 
-    <div class="col-4">
+    <div  #scrollAgregar class="col-4">
       <div class="fs-2 text lh-lg titulo-css">
         <h2>Proyectos</h2>
       </div>
@@ -13,7 +13,7 @@
     <!--Boton Agregar Bloque-->
     <div class="col-8">
 
-      <button *ngIf="mostrarEditar" (click)="switchAgregar()" type="button" class="float-end  btn-agregar">Agregar
+      <button *ngIf="mostrarEditar" (click)="switchAgregar()" (click)="scroll(scrollAgregar)" type="button" class="float-end  btn-agregar">Agregar
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg"
           viewBox="0 0 16 16">
           <path fill-rule="evenodd"
@@ -26,13 +26,14 @@
 
 
 <!--Componentes de Agregar y edicion-->
-<app-agregar-proy (switchAg)="switchAgregar()" *ngIf="esconderAgregar"></app-agregar-proy>
+<app-agregar-proy  (switchAg)="switchAgregar()" *ngIf="esconderAgregar"></app-agregar-proy>
+<div #scrollEditar></div>
 <app-editar-proy (switchEd)="switchEditar()" *ngIf="esconderEditar"></app-editar-proy>
 
 
 
 <!--BLOQUES-->
-<div *ngFor="let proyecto of proyecto" class="container-lg marco-contenedor">
+<div  *ngFor="let proyecto of proyecto" class="container-lg marco-contenedor">
 
   <form action="">
     <div class="row">
@@ -64,7 +65,7 @@
         <!--Fecha desde/hasta-->
         <div class="row">
           <div class="col fecha_desde ">
-            <span  class="fecha">{{proyecto.fecha_desde}} / {{proyecto.fecha_hasta}}</span>
+            <span  class="fecha">{{proyecto.fecha}}</span>
             <div>
             </div>
           </div>
@@ -77,7 +78,7 @@
       <div class="col2">
 
         <!--Boton editar -->
-        <button (click)="enviarId(proyecto)" (click)="switchEditar()"  *ngIf="mostrarAgregar" type="button"
+        <button (click)="enviarId(proyecto)" (click)="switchEditar()" (click)="scroll(scrollEditar)" *ngIf="mostrarAgregar" type="button"
           class="btn btn-primary  float-end ">
           <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-pencil"
             viewBox="0 0 16 16">  

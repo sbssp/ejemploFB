@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Estudios } from '../modelo/estudios';
 import { Experiencia } from '../modelo/experiencia';
 import { Habilidades } from '../modelo/habilidades';
@@ -7,147 +8,118 @@ import { Persona } from '../modelo/persona';
 import { Proyectos } from '../modelo/proyectos';
 
 
+const API_URL = 'http://localhost:8080/api/test';
 
 @Injectable({
   providedIn: 'root'
 })
 
+
 export class PortfolioService {
 
   constructor(private http:HttpClient) {}
 
-//Urls metodos Experiencia
-private UrlExp='http://localhost:8080/ver/experiencia';
-private UrlExpid='http://localhost:8080/buscar/experiencia';
-private UrlExpEdit='http://localhost:8080/editar/experiencia';
-private UrlExpDelete='http://localhost:8080/borrar/experiencia';
-private UrlExpadd='http://localhost:8080/new/experiencia';
-
-//Urls metodos Proyectos
-private UrlProy='http://localhost:8080/ver/proyectos';
-private UrlProyid='http://localhost:8080/buscar/proyectos';
-private UrlProyEdit='http://localhost:8080/editar/proyectos';
-private UrlProyDelete='http://localhost:8080/borrar/proyectos';
-private Urlproyadd='http://localhost:8080/new/proyectos';
-
-//Urls metodos Estudios
-private UrlEst='http://localhost:8080/ver/estudios';
-private UrlEstid='http://localhost:8080/buscar/estudios';
-private UrlEstEdit='http://localhost:8080/editar/estudios';
-private UrlEstDelete='http://localhost:8080/borrar/estudios';
-private UrlEstadd='http://localhost:8080/new/estudios';
-
- //Urls metodos Habilidades
- private UrlSkills='http://localhost:8080/ver/habilidades';
- private UrlSkillsId='http://localhost:8080/buscar/habilidades';
- private UrlSkillsEdit='http://localhost:8080/editar/habilidades';
- private UrlSkillsDelete='http://localhost:8080/borrar/habilidades';
- private UrlSkillsAdd='http://localhost:8080/new/habilidades';
-
-
- //Urls metodos Persona
- private UrlPersona='http://localhost:8080/ver/persona';
- private UrlPersonaId='http://localhost:8080/buscar/persona';
- private UrlPersonaEdit='http://localhost:8080/editar/persona';
- //UrlPersonaDelete='http://localhost:8080/borrar/persona';
- //UrlPersonaAdd='http://localhost:8080/new/persona';
-
   //Metodos persona
 
-   getPersona(){
-    return this.http.get<Persona[]>(this.UrlPersona);
-   }
+
+  getPersona(): Observable<any> {
+    return this.http.get(API_URL + '/ver/persona', { responseType: 'json' });  
+  }
+  getExpeiencia(): Observable<any> {
+    return this.http.get(API_URL + '/ver/experiencia', { responseType: 'json' });  
+  }
+  getProyectos(): Observable<any> {
+    return this.http.get(API_URL + '/ver/proyectos', { responseType: 'json' });  
+  }
+  getEstudios(): Observable<any> {
+    return this.http.get(API_URL + '/ver/estudios', { responseType: 'json' });  
+  }
+  getHabilidades(): Observable<any> {
+    return this.http.get(API_URL + '/ver/habilidades', { responseType: 'json' });  
+  }
+
+
+   
     getPersonaId(id:number){
-      return this.http.get<Persona>(this.UrlPersonaId+"/"+id);
+      return this.http.get<Persona>(API_URL + '/buscar/persona' + "/"+id);
     }
   
     editarPersona(persona:Persona){
-      return this.http.put<Persona>(this.UrlPersonaEdit,persona);
+      return this.http.put<Persona>(API_URL + '/editar/persona', persona);  
     }
   
 
   //Metodos experiencia
-  getExpeiencia(){
-    return this.http.get<Experiencia[]>(this.UrlExp);
-  }
-
+ 
   createExperiencia(experiencia:Experiencia){
-    return this.http.post<Experiencia>(this.UrlExpadd, experiencia);
+    return this.http.post<Experiencia>(API_URL + '/new/experiencia', experiencia);
   }
 
   getExperienciaId(id:number){
-    return this.http.get<Experiencia>(this.UrlExpid+"/"+id);
+    return this.http.get<Experiencia>(API_URL+ '/buscar/experiencia' +"/"+id);
   }
 
   editarExperiencia(experiencia:Experiencia){
-    return this.http.put<Experiencia>(this.UrlExpEdit,experiencia);
+    return this.http.put<Experiencia>(API_URL + '/editar/experiencia',experiencia);
   }
 
   borrarExperiencia(experiencia:Experiencia){
-    return this.http.delete<Experiencia>(this.UrlExpDelete+"/"+experiencia.id);
+    return this.http.delete<Experiencia>(API_URL + '/borrar/experiencia' +"/"+experiencia.id);
   }
 
   //Metodos Proyectos
-  getProyectos(){
-    return this.http.get<Proyectos[]>(this.UrlProy);
+
+  createProyectos(proyecto:Proyectos){
+    return this.http.post<Proyectos>(API_URL + '/new/proyectos', proyecto);
   }
 
-  CreateProyectos(proyecto:Proyectos){
-    return this.http.post<Proyectos>(this.Urlproyadd, proyecto);
+  getProyectoId(id:number){
+    return this.http.get<Proyectos>(API_URL+ '/buscar/proyectos' +"/"+id);
   }
 
-  getProyectosId(id:number){
-    return this.http.get<Proyectos>(this.UrlProyid+"/"+id);
+  editarProyecto(proyecto:Proyectos){
+    return this.http.put<Proyectos>(API_URL + '/editar/proyectos',proyecto);
   }
 
-  editarProyectos(proyecto:Proyectos){
-    return this.http.put<Proyectos>(this.UrlProyEdit,proyecto);
-  }
-
-  borrarProyectos(proyecto:Proyectos){
-    return this.http.delete<Proyectos>(this.UrlProyDelete+"/"+proyecto.id);
+  borrarProyecto(proyecto:Proyectos){
+    return this.http.delete<Proyectos>(API_URL + '/borrar/proyectos' +"/"+proyecto.id);
   }
 
   //Metodos Estudios
-  getEstudios(){
-    return this.http.get<Estudios[]>(this.UrlEst);
-  }
 
-  createEstudios(estudios:Estudios){
-    return this.http.post<Estudios>(this.UrlEstadd, estudios);
+  createEstudios(estudio:Estudios){
+    return this.http.post<Estudios>(API_URL + '/new/estudios', estudio);
   }
 
   getEstudiosId(id:number){
-    return this.http.get<Estudios>(this.UrlEstid+"/"+id);
+    return this.http.get<Estudios>(API_URL+ '/buscar/estudios' +"/"+id);
   }
 
-  editarEstudios(estudios:Estudios){
-    return this.http.put<Estudios>(this.UrlEstEdit,estudios);
+  editarEstudios(estudio:Estudios){
+    return this.http.put<Estudios>(API_URL + '/editar/estudios',estudio);
   }
 
-  borrarEstdusios(estudios:Estudios){
-    return this.http.delete<Estudios>(this.UrlEstDelete+"/"+estudios.id);
+  borrarEstudios(estudio:Estudios){
+    return this.http.delete<Estudios>(API_URL + '/borrar/estudios' +"/"+estudio.id);
   }
 
   //Metodos Skills
-  getHabilidades(){
-    return this.http.get<Habilidades[]>(this.UrlSkills);
-  }
+
 
   createHabilidades(habilidad:Habilidades){
-    return this.http.post<Habilidades>(this.UrlSkillsAdd, habilidad);
+    return this.http.post<Habilidades>(API_URL + '/new/habilidades', habilidad);
   }
 
   getHabilidadesId(id:number){
-    return this.http.get<Habilidades>(this.UrlSkillsId+"/"+id);
+    return this.http.get<Habilidades>(API_URL+ '/buscar/habilidades' +"/"+id);
   }
 
-  editarHabilidades(habilidad:Habilidades){
-    return this.http.put<Habilidades>(this.UrlSkillsEdit,habilidad);
+  editarHabilidades(proyecto:Habilidades){
+    return this.http.put<Habilidades>(API_URL + '/editar/habilidades',proyecto);
   }
 
   borrarHabilidades(habilidad:Habilidades){
-    return this.http.delete<Habilidades>(this.UrlSkillsDelete+"/"+habilidad.id);
+    return this.http.delete<Habilidades>(API_URL + '/borrar/habilidades' +"/"+ habilidad.id);
   }
 
 

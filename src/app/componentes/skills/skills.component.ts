@@ -59,8 +59,10 @@ export class SkillsComponent implements OnInit {
     this.esconderEditar = !this.esconderEditar;
     this.ngOnInit();    
   }
-
- 
+  
+  scroll(el: HTMLElement) {
+    el.scrollIntoView();
+}
 
    
   }

@@ -28,7 +28,7 @@ export class ExperienciaComponent implements OnInit {
 
   }
   
-  editar(experiencia:Experiencia):void{
+  enviarId(experiencia:Experiencia):void{
     localStorage.setItem("id", experiencia.id.toString());
    }
 
@@ -64,6 +64,8 @@ export class ExperienciaComponent implements OnInit {
    }
  
   
- 
+   scroll(el: HTMLElement) {
+    el.scrollIntoView();
+}
 
     }

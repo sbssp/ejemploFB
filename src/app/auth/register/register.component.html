@@ -1,3 +1,4 @@
+<div class="container-lg">
 <div class="col-md-12">
     <div class="card card-container">
       <img
@@ -13,7 +14,7 @@
         novalidate
       >
         <div class="form-group">
-          <label for="username">Username</label>
+          <label for="username">Usuario</label>
           <input
             type="text"
             class="form-control"
@@ -25,12 +26,12 @@
             #username="ngModel"
           />
           <div class="alert-danger" *ngIf="username.errors && f.submitted">
-            <div *ngIf="username.errors['required']">Username is required</div>
+            <div *ngIf="username.errors['required']">Se requiere de un nombre de usuario</div>
             <div *ngIf="username.errors['minlength']">
-              Username must be at least 3 characters
+             El nombre de usuario debe tener almenos 3 caracteres
             </div>
             <div *ngIf="username.errors['maxlength']">
-              Username must be at most 20 characters
+              El nombre de usuario no puede tener más de 20 caracteres
             </div>
           </div>
         </div>
@@ -46,14 +47,14 @@
             #email="ngModel"
           />
           <div class="alert-danger" *ngIf="email.errors && f.submitted">
-            <div *ngIf="email.errors['required']">Email is required</div>
+            <div *ngIf="email.errors['required']">Se requiere de uan dirección de e-mail</div>
             <div *ngIf="email.errors['email']">
-              Email must be a valid email address
+              La dirección de e-mail debe ser válida.
             </div>
           </div>
         </div>
         <div class="form-group">
-          <label for="password">Password</label>
+          <label for="password">Contraseña</label>
           <input
             type="password"
             class="form-control"
@@ -66,7 +67,7 @@
           <div class="alert-danger" *ngIf="password.errors && f.submitted">
             <div *ngIf="password.errors['required']">Password is required</div>
             <div *ngIf="password.errors['minlength']">
-              Password must be at least 6 characters
+              La contraseña debe tener almenos 6 caracteres
             </div>
           </div>
         </div>
@@ -74,11 +75,12 @@
           <button class="btn btn-primary btn-block">Sign Up</button>
         </div>
         <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
-          Signup failed!<br />{{ errorMessage }}
+          Falló el registro<br />{{ errorMessage }}
         </div>
       </form>
       <div class="alert alert-success" *ngIf="isSuccessful">
-        Your registration is successful!
+        Registo exitoso!!
       </div>
     </div>
   </div>
+</div>

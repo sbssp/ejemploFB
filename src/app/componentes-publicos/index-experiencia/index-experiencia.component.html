@@ -1,0 +1,59 @@
+
+<!--HEADER-->
+<div class="container-lg titulo-contenedor bloque-tarjeta">
+    <div class="row">
+  
+      <div class="col-4">
+        <div class="fs-2 text lh-lg titulo-css">
+          <h2>Experiencia</h2>
+        </div>
+      </div>
+  
+   
+    </div>
+  </div>
+ 
+  
+  <!--BLOQUES DE EXPERIENCIA-->
+  <div *ngFor="let experiencia of experiencias" class="container-lg marco-contenedor">
+  
+      <div class="row">
+        <div class="col-2 align-self-center">
+  
+          <!--Icono experiencia-->
+          <div class="row ">
+            <img  src={{experiencia.icono}} class="img-fluid img_thumbnail" alt="experiencia">
+          </div>
+        </div>
+  
+        <div class="col-10">
+          <div class="row">
+            <div class="col-10 fs-2 text lh-lg border-bottom  ">
+  
+              <h3 >{{experiencia.empresa}}</h3>
+              <h5 >{{experiencia.puesto}}</h5>
+  
+            </div>
+          </div>
+  
+  
+          <!--Descripcion-->
+          <div> 
+            <span  class="descripcion"> {{experiencia.descripcion}}</span>
+          </div>
+  
+  
+          <!--Fecha desde/hasta-->
+          <div class="row">
+            <div class="col fecha_desde ">
+              <span  class="fecha">{{experiencia.fecha_desde}} / {{experiencia.fecha_hasta}}</span>
+              <div>
+              </div>
+            </div>
+  
+  
+          </div>
+        </div>
+      </div>
+      
+    

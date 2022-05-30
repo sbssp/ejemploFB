@@ -1,7 +1,7 @@
 export class Persona{
 
     id!:number;
-    nombre:String = "Nombre";
+    nombre!:String;
     apellido!:String;
     email!:String;
     link!:String;

@@ -4,7 +4,7 @@
 <div class="container-lg titulo-contenedor bloque-tarjeta">
   <div class="row">
 
-    <div class="col-4">
+    <div #scrollAgregar class="col-4">
       <div class="fs-2 text lh-lg titulo-css">
         <h2>Estudios</h2>
       </div>
@@ -13,7 +13,7 @@
     <!--Boton Agregar Experiencia-->
     <div class="col-8">
 
-      <button *ngIf="mostrarEditar" (click)="switchAgregar()" type="button" class="float-end  btn-agregar">Agregar
+      <button *ngIf="mostrarEditar" (click)="switchAgregar()" (click)="scroll(scrollAgregar)" type="button" class="float-end  btn-agregar">Agregar
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg"
           viewBox="0 0 16 16">
           <path fill-rule="evenodd"
@@ -26,6 +26,7 @@
 
 
 <!--Componentes de Agregar y edicion-->
+<div #scrollEditar></div>
 <app-agregar-est (switchAg) ="switchAgregar()" *ngIf="esconderAgregar"></app-agregar-est>
 <app-editar-est (switchEd) ="switchEditar()" *ngIf="esconderEditar"></app-editar-est>
 
@@ -39,7 +40,7 @@
     <div class="row">
       <div class="col-2 align-self-center">
 
-        <!--Icono experiencia-->
+        <!--Icono-->
         <div class="row ">
           <img  src={{estudio.icono}} class="img-fluid img_thumbnail iconos" alt="experiencia">
         </div>
@@ -78,7 +79,7 @@
       <div class="col2">
 
         <!--Boton editar -->
-        <button *ngIf="mostrarAgregar" (click)="editar(estudio)" (click)="switchEditar()" type="button"
+        <button *ngIf="mostrarAgregar" (click)="editar(estudio)" (click)="switchEditar()" (click)="scrollEditar" type="button"
           class="btn btn-primary  float-end ">
           <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-pencil"
             viewBox="0 0 16 16">

@@ -1,0 +1,60 @@
+<!--<app-formulario-exp></app-formulario-exp>-->
+
+<!--HEADER-->
+<div class="container-lg titulo-contenedor bloque-tarjeta">
+    <div class="row">
+  
+      <div class="col-4">
+        <div class="fs-2 text lh-lg titulo-css">
+          <h2>Estudios</h2>
+        </div>
+      </div>
+  
+      </div>
+    </div>
+
+  
+  
+  <!--BLOQUES DE EXPERIENCIA-->
+  <div *ngFor="let estudio of estudios" class="container-lg marco-contenedor">
+  
+    <form action="">
+      <div class="row">
+        <div class="col-2 align-self-center">
+  
+          <!--Icono experiencia-->
+          <div class="row ">
+            <img  src={{estudio.icono}} class="img-fluid img_thumbnail iconos" alt="experiencia">
+          </div>
+        </div>
+  
+        <div class="col-10">
+          <div class="row">
+            <div class="col-10 fs-2 text lh-lg border-bottom  ">
+  
+              <h3 >{{estudio.estudio}}</h3>
+              <h5 >{{estudio.institucion}}</h5>
+  
+            </div>
+          </div>
+  
+  
+          <!--Descripcion-->
+          <div> 
+            <span  class="descripcion"> {{estudio.descripcion}}</span>
+          </div>
+  
+  
+          <!--Fecha desde/hasta-->
+          <div class="row">
+            <div class="col fecha_desde ">
+              <span  class="fecha">{{estudio.fecha_desde}} / {{estudio.fecha_hasta}}</span>
+              <div>
+              </div>
+            </div>
+  
+  
+          </div>
+        </div>
+      </div>
+     

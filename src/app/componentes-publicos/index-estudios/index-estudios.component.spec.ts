@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BoardUserComponent } from './board-user.component';
+import { IndexEstudiosComponent } from './index-estudios.component';
 
-describe('BoardUserComponent', () => {
-  let component: BoardUserComponent;
-  let fixture: ComponentFixture<BoardUserComponent>;
+describe('IndexEstudiosComponent', () => {
+  let component: IndexEstudiosComponent;
+  let fixture: ComponentFixture<IndexEstudiosComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BoardUserComponent ]
+      declarations: [ IndexEstudiosComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BoardUserComponent);
+    fixture = TestBed.createComponent(IndexEstudiosComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

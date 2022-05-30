@@ -29,7 +29,7 @@ export class ProyectosComponent implements OnInit {
 
 
   borrar(proyectos: Proyectos): void {
-    this.http.borrarProyectos(proyectos)
+    this.http.borrarProyecto(proyectos)
       .subscribe(data => {
         this.proyecto = this.proyecto;
         this.ngOnInit();
@@ -59,5 +59,7 @@ export class ProyectosComponent implements OnInit {
   }
 
 
-
+  scroll(el: HTMLElement) {
+    el.scrollIntoView();
+}
 }

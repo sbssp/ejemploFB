@@ -22,7 +22,7 @@ proyecto = new Proyectos();
 
   
   guardarProyecto(proyecto:Proyectos){
-    this.http.CreateProyectos(proyecto)
+    this.http.createProyectos(proyecto)
     .subscribe(data=>{
       this.refrescar();
     })

@@ -2,14 +2,13 @@
 
 .banner {
    
-    height: 320px;
     overflow: hidden;
+    max-height: 380px;
       }
   
 .banner-img {
-   
- /*   position: relative;
-    bottom: 92px;*/
+   margin-top: -80px;
+    
       }
   
 .fondo {

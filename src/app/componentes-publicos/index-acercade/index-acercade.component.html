@@ -1,0 +1,34 @@
+
+<!--INFORMACION PERSONAL-->
+<div *ngFor="let persona of personas" class="container ">
+
+  <div  class="row justify-content-start">
+    <div class="col-lg-3 ">
+      <!--Imagen Personal-->
+      <div class="container card text-center  align-items-center border-0">
+        <img  src="{{persona.fotopers}}" class="foto-pers " alt="Foto personal">
+</div>
+<div class="card  text-center border-0">
+        <h4>{{persona.nombre}} {{persona.apellido}}</h4>
+        <h5>{{persona.email}}</h5>
+        <h5><a href={{persona.link}}>{{persona.link}}</a></h5>
+      </div>
+    </div>
+    <!--Campos de información Personal-->
+    <div class="col-lg-9">
+      <div class="row">
+        <div class="col">
+          <div class="fs-2 text lh-lg border-bottom text-primary">
+            <h3>Acerca de...</h3>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="fs-6 text">
+          <span >{{persona.resumen}}</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
