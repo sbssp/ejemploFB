@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { Persona } from 'src/app/modelo/persona';
 import { PortfolioService } from 'src/app/servicios/portfolio.service';
 

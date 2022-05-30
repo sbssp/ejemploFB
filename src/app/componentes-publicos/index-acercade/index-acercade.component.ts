@@ -18,9 +18,8 @@ export class IndexAcercadeComponent implements OnInit {
     this.http.getPersona()
     .subscribe(data=>{
     this.personas=data;
-    })
+    });
   }
 
 
 }
-

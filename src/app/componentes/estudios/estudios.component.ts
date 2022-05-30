@@ -21,8 +21,6 @@ export class EstudiosComponent implements OnInit {
       this.estudios=data;
     });
 
-      
-
   }
   
   editar(estudio:Estudios):void{
