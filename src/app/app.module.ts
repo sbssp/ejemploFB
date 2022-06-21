@@ -30,7 +30,6 @@ import { IndexEstudiosComponent } from './componentes-publicos/index-estudios/in
 import { IndexSkillsComponent } from './componentes-publicos/index-skills/index-skills.component';
 import { IndexProyectosComponent } from './componentes-publicos/index-proyectos/index-proyectos.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
-import { DragDropModule } from '@angular/cdk/drag-drop';
 
 @NgModule({
   declarations: [
@@ -58,15 +57,14 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     IndexEstudiosComponent,
     IndexSkillsComponent,
     IndexProyectosComponent
-  ],
+    
+    ],
   imports: [
     HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule,
-    DragDropModule
-
+    ReactiveFormsModule
   ],
   
   providers: [authInterceptorProviders, {provide: LocationStrategy, useClass: HashLocationStrategy}],

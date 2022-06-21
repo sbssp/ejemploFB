@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Estudios } from 'src/app/modelo/estudios';
 import { PortfolioService } from 'src/app/servicios/portfolio.service';
-import {CdkDragDrop, moveItemInArray, CdkDrag} from '@angular/cdk/drag-drop';
 
 
 @Component({
@@ -74,9 +73,6 @@ export class EstudiosComponent implements OnInit {
     el.scrollIntoView();
   }
 
-  drop(event: CdkDragDrop<string[]>) {
-    moveItemInArray(this.estudios, event.previousIndex, event.currentIndex);
-  }
-  
+
   
 }

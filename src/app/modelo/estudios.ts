@@ -6,7 +6,7 @@ export class Estudios{
     descripcion!:String;
     fecha_desde!:String;
     fecha_hasta!:String;
-    icono:String = "../assets/estudio-default.png";
+    icono:String = "../assets/img/estudio-default.png";
 
     
 }

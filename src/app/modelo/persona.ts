@@ -8,5 +8,5 @@ export class Persona{
     telefono!:String;
     resumen!:String;
     edad!:number;
-    fotopers:String = "../assets/perfil-default.jpg";
+    fotopers:String = "../assets/img/perfil-default.jpg";
 }
