@@ -16,9 +16,7 @@ export class EditarEstComponent implements OnInit {
   constructor(private http:PortfolioService) { }
 
   ngOnInit(): void {
-
   this.recibirId();
-
   }
 
   recibirId(){
@@ -42,5 +40,11 @@ export class EditarEstComponent implements OnInit {
         this.switchEd.emit();
    }
  
-  
+ btnHide :boolean = false;
+ btnClicked:boolean = true;
+ 
+   btnCarga(){
+     this.btnHide = !this.btnHide;
+     this.btnClicked = !this.btnClicked; 
+   }
 }

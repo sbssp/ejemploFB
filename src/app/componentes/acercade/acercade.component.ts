@@ -10,34 +10,34 @@ import { PortfolioService } from 'src/app/servicios/portfolio.service';
 export class AcercadeComponent implements OnInit {
 
 
-  personas!:Persona[];
-  
-  constructor(private http:PortfolioService) { }
+  personas!: Persona[];
+
+  constructor(private http: PortfolioService) { }
 
   ngOnInit(): void {
     this.http.getPersona()
-    .subscribe(data=>{
-    this.personas=data;
-    })
+      .subscribe(data => {
+        this.personas = data;
+      })
   }
-  
-  editar(persona:Persona):void{
-    localStorage.setItem("id", persona.id.toString());
-   }
 
-  public mostrar:boolean = true;
-  public esconder:boolean = false;
+  editar(persona: Persona): void {
+    localStorage.setItem("id", persona.id.toString());
+  }
+
+  public mostrar: boolean = true;
+  public esconder: boolean = false;
 
   cambiarInput() {
     this.mostrar = !this.mostrar;
     this.esconder = !this.esconder;
     this.ngOnInit();
-    }
-
-  
-   scroll(el: HTMLElement) {
-      el.scrollIntoView();
   }
-  
+
+
+  scroll(el: HTMLElement) {
+    el.scrollIntoView();
+  }
+
 }
 

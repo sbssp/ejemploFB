@@ -8,10 +8,10 @@ describe('FormularioExpComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AgregarExp ],
+      declarations: [AgregarExp],
       imports: [HttpClientTestingModule]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

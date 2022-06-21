@@ -1,40 +1,52 @@
 <div id="app">
-    <nav class="navbar navbar-expand navbar-dark bg-dark">
-      <a href="#" class="navbar-brand">Portfolio</a>
-      <ul class="navbar-nav mr-auto" routerLinkActive="active">
-        <li class="nav-item">
-          <a href="/home" class="nav-link" routerLink="home">Inicio </a>
-        </li>
-        <li class="nav-item" *ngIf="showAdminBoard">
-          <a href="/admin" class="nav-link" routerLink="admin">Administrar</a>
-        </li>
-      </ul>
-      <ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn">
-        <!--<li class="nav-item">
+  <nav class="navbar navbar-expand navbar-dark bg-dark">
+    <a href="#" class="navbar-brand">Portfolio</a>
+    <ul class="navbar-nav mr-auto" routerLinkActive="active">
+      <li class="nav-item">
+        <a href="/home" class="nav-link" routerLink="home">Inicio </a>
+      </li>
+      <li class="nav-item" *ngIf="showAdminBoard">
+        <a href="/admin" class="nav-link" routerLink="admin">Administrar</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn">
+      <!--<li class="nav-item">
           <a href="/register" class="nav-link" routerLink="register">Registrarse</a>
         </li>-->
-        <li class="nav-item">
-          <a href="/login" class="nav-link" routerLink="login">Iniciar Sesion</a>
-        </li>
-      </ul>
-      <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">
-          <li class="nav-item">
-          <a href class="nav-link" (click)="logout()">LogOut</a>
-        </li>
-      </ul>
-    </nav>
-    <div class="container">
-      <router-outlet></router-outlet>
-    </div>
+      <li class="nav-item">
+        <a href="/login" class="nav-link" routerLink="login">Iniciar Sesión</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">
+      <li class="nav-item">
+        <a href class="nav-link" (click)="logout()">Cerrar Sesión</a>
+      </li>
+    </ul>
+  </nav>
+  <div class="container">
+    <router-outlet></router-outlet>
   </div>
-
-<div class=" container banner ">
-
-<img class="banner-img" src = "../assets/banner.jpg">
-
 </div>
 
-  
-  <router-outlet></router-outlet>
 
-<div hidden class="content" ><span>Portfolio app is running!</span> </div>
+
+<div id="banner">
+  <div id="wrapper">
+    <div id="container">
+      <img class="banner-img" src="../assets/img/banner.png" >
+    </div>
+  </div>
+</div>
+
+<router-outlet></router-outlet>
+
+<div hidden class="content"><span>Portfolio app is running!</span> </div>
+
+
+<div id="banner">
+  <div id="wrapper">
+    <div id="container">
+      <img class="banner-img" src="../assets/img/footer.png" >
+    </div>
+  </div>
+</div>

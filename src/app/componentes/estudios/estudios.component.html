@@ -13,7 +13,8 @@
     <!--Boton Agregar Experiencia-->
     <div class="col-8">
 
-      <button *ngIf="mostrarEditar" (click)="switchAgregar()" (click)="scroll(scrollAgregar)" type="button" class="float-end  btn-agregar">Agregar
+      <button *ngIf="mostrarEditar" (click)="switchAgregar()" (click)="scroll(scrollAgregar)" type="button"
+        class="float-end  btn-agregar">Agregar
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg"
           viewBox="0 0 16 16">
           <path fill-rule="evenodd"
@@ -27,22 +28,28 @@
 
 <!--Componentes de Agregar y edicion-->
 <div #scrollEditar></div>
-<app-agregar-est (switchAg) ="switchAgregar()" *ngIf="esconderAgregar"></app-agregar-est>
-<app-editar-est (switchEd) ="switchEditar()" *ngIf="esconderEditar"></app-editar-est>
+<app-agregar-est (switchAg)="switchAgregar()" *ngIf="esconderAgregar"></app-agregar-est>
+<app-editar-est (switchEd)="switchEditar()" *ngIf="esconderEditar"></app-editar-est>
 
 
+<!--BLOQUES-->
+<div
+  cdkDropList
+  (cdkDropListDropped)="drop($event)">
+
+<div *ngFor="let estudio of estudios"   class="container-lg marco-contenedor">
 
 
-<!--BLOQUES DE EXPERIENCIA-->
-<div *ngFor="let estudio of estudios" class="container-lg marco-contenedor">
-
-  <form action="">
+  <form action="" >
     <div class="row">
       <div class="col-2 align-self-center">
 
+     
         <!--Icono-->
+      
         <div class="row ">
-          <img  src={{estudio.icono}} class="img-fluid img_thumbnail iconos" alt="experiencia">
+          <img src={{estudio.icono}} class="img-fluid img_thumbnail iconos" alt="experiencia">
+         
         </div>
       </div>
 
@@ -50,23 +57,23 @@
         <div class="row">
           <div class="col-10 fs-2 text lh-lg border-bottom  ">
 
-            <h3 >{{estudio.estudio}}</h3>
-            <h5 >{{estudio.institucion}}</h5>
+            <h3>{{estudio.estudio}}</h3>
+            <h5>{{estudio.institucion}}</h5>
 
           </div>
         </div>
 
 
         <!--Descripcion-->
-        <div> 
-          <span  class="descripcion"> {{estudio.descripcion}}</span>
+        <div>
+          <span class="descripcion"><pre>{{estudio.descripcion}}</pre> </span>
         </div>
 
 
         <!--Fecha desde/hasta-->
         <div class="row">
           <div class="col fecha_desde ">
-            <span  class="fecha">{{estudio.fecha_desde}} / {{estudio.fecha_hasta}}</span>
+            <span class="fecha">{{estudio.fecha_desde}} / {{estudio.fecha_hasta}}</span>
             <div>
             </div>
           </div>
@@ -79,8 +86,8 @@
       <div class="col2">
 
         <!--Boton editar -->
-        <button *ngIf="mostrarAgregar" (click)="editar(estudio)" (click)="switchEditar()" (click)="scrollEditar" type="button"
-          class="btn btn-primary  float-end ">
+        <button *ngIf="mostrarAgregar" (click)="editar(estudio)" (click)="switchEditar()" (click)="scroll(scrollEditar)"
+          type="button" class="btn btn-primary  float-end ">
           <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-pencil"
             viewBox="0 0 16 16">
             <path
@@ -89,7 +96,7 @@
         </button>
 
         <!--Boton eliminar-->
-        <button  type="button" (click)="borrar(estudio)" class="btn btn-danger float-end ">
+        <button type="button" (click)="borrar(estudio)" class="btn btn-danger float-end ">
           <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-eraser"
             viewBox="0 0 16 16">
             <path
@@ -101,3 +108,5 @@
 
     </div>
   </form>
+</div>
+</div>

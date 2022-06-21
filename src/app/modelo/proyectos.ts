@@ -5,7 +5,7 @@ export class Proyectos{
     enlace!:String;
     descripcion!:String;
     fecha!:String;
-    imagen:String = "../assets/proyecto-default.png";
+    imagen:String = "../assets/img/proyecto-default.png";
 
     
 }

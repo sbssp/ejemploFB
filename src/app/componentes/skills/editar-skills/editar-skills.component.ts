@@ -11,37 +11,43 @@ import { PortfolioService } from 'src/app/servicios/portfolio.service';
 export class EditarSkillsComponent implements OnInit {
 
 
-  habilidad:Habilidades = new Habilidades();
+  habilidad: Habilidades = new Habilidades();
 
-  constructor(private http:PortfolioService) { }
+  constructor(private http: PortfolioService) { }
 
   ngOnInit(): void {
-  this.recibirId();
+    this.recibirId();
   }
 
-  
-  recibirId(){
-    let id:any = localStorage.getItem("id");
-    this.http.getHabilidadesId(id) 
-    .subscribe(data=>{
-      this.habilidad=data;
-    })
-   }
-  
-   actualizarSkill(habilidad:Habilidades){
-     this.http.editarHabilidades(this.habilidad)
-     .subscribe(data=>{
-       this.habilidad=data;
-       this.refrescar();
-     })
-   }
-  
-   @Output()  switchEd: EventEmitter<string> = new EventEmitter();
-   refrescar(){
-        this.switchEd.emit();
-   }
- 
 
+  recibirId() {
+    let id: any = localStorage.getItem("id");
+    this.http.getHabilidadesId(id)
+      .subscribe(data => {
+        this.habilidad = data;
+      })
+  }
+
+  actualizarSkill(habilidad: Habilidades) {
+    this.http.editarHabilidades(this.habilidad)
+      .subscribe(data => {
+        this.habilidad = data;
+        this.refrescar();
+      })
+  }
+
+  @Output() switchEd: EventEmitter<string> = new EventEmitter();
+  refrescar() {
+    this.switchEd.emit();
+  }
+
+  btnHide: boolean = false;
+  btnClicked: boolean = true;
+
+  btnCarga() {
+    this.btnHide = !this.btnHide;
+    this.btnClicked = !this.btnClicked;
+  }
 }
 
 

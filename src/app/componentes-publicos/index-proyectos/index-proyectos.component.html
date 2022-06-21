@@ -2,61 +2,61 @@
 
 <!--HEADER-->
 <div class="container-lg titulo-contenedor bloque-tarjeta">
-    <div class="row">
-  
-      <div class="col-4">
-        <div class="fs-2 text lh-lg titulo-css">
-          <h2>Proyectos</h2>
-        </div>
-      </div>
-  
-    </div>
-  </div>
-  
-  
+  <div class="row">
 
-  
-  <!--BLOQUES-->
-  <div *ngFor="let proyecto of proyecto" class="container-lg marco-contenedor">
-  
-    <form action="">
-      <div class="row">
-        <div class="col-2 align-self-center">
-  
-          <!--Icono-->
-          <div class="row ">
-            <img  src={{proyecto.imagen}} class="img-fluid img_thumbnail" alt="experiencia">
-          </div>
-        </div>
-  
-        <div class="col-10">
-          <div class="row">
-            <div class="col-10 fs-2 text lh-lg border-bottom  ">
-  
-              <h3 >{{proyecto.nombre}}</h3>
-              <h5 >{{proyecto.enlace}}</h5>
-  
-            </div>
-          </div>
-  
-  
-          <!--Descripcion-->
-          <div> 
-            <span  class="descripcion"> {{proyecto.descripcion}}</span>
-          </div>
-  
-  
-          <!--Fecha desde/hasta-->
-          <div class="row">
-            <div class="col fecha_desde ">
-              <span  class="fecha">{{proyecto.fecha}}</span>
-              <div>
-              </div>
-            </div>
-  
-  
-          </div>
+    <div class="col-4">
+      <div class="fs-2 text lh-lg titulo-css">
+        <h2>Proyectos</h2>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+<!--BLOQUES-->
+<div *ngFor="let proyecto of proyecto" class="container-lg marco-contenedor">
+
+  <form action="">
+    <div class="row">
+      <div class="col-2 align-self-center">
+
+        <!--Icono-->
+        <div class="row ">
+          <img src={{proyecto.imagen}} class="img-fluid img_thumbnail" alt="experiencia">
         </div>
       </div>
-   
-    </form>
+
+      <div class="col-10">
+        <div class="row">
+          <div class="col-10 fs-2 text lh-lg border-bottom  ">
+
+            <h3>{{proyecto.nombre}}</h3>
+            <h5><a href="{{proyecto.enlace}}">{{proyecto.enlace}}</a></h5>
+
+          </div>
+        </div>
+
+
+        <!--Descripcion-->
+        <div>
+          <span class="descripcion"><pre>{{proyecto.descripcion}}</pre></span>
+        </div>
+
+
+        <!--Fecha desde/hasta-->
+        <div class="row">
+          <div class="col fecha_desde ">
+            <span class="fecha">{{proyecto.fecha}}</span>
+            <div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+
+  </form>

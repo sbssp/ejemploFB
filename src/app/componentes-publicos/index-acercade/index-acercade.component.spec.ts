@@ -1,3 +1,4 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { IndexAcercadeComponent } from './index-acercade.component';
@@ -8,7 +9,8 @@ describe('IndexAcercadeComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ IndexAcercadeComponent ]
+      declarations: [ IndexAcercadeComponent ],
+      imports: [HttpClientTestingModule]
     })
     .compileComponents();
   });

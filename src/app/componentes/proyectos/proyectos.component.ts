@@ -24,7 +24,7 @@ export class ProyectosComponent implements OnInit {
 
   enviarId(proyecto: Proyectos): void {
     localStorage.setItem("id", proyecto.id.toString());
-    
+
   }
 
 
@@ -61,5 +61,7 @@ export class ProyectosComponent implements OnInit {
 
   scroll(el: HTMLElement) {
     el.scrollIntoView();
-}
+  }
+
+
 }

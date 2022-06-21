@@ -13,22 +13,29 @@ import { PortfolioService } from 'src/app/servicios/portfolio.service';
 
 
 export class AgregarExp {
-  
-experiencia= new Experiencia();
 
-  constructor(private http:PortfolioService) { }
+  experiencia = new Experiencia();
 
-  
-  GuardarExperiencia(experiencia:Experiencia){
+  constructor(private http: PortfolioService) { }
+
+
+  GuardarExperiencia(experiencia: Experiencia) {
     this.http.createExperiencia(experiencia)
-    .subscribe(data=>{
-      this.refrescar();   
-    })
-  }
-  
-  @Output()  switchAg: EventEmitter<string> = new EventEmitter();
-  refrescar(){
-       this.switchAg.emit();
+      .subscribe(data => {
+        this.refrescar();
+      })
   }
 
+  @Output() switchAg: EventEmitter<string> = new EventEmitter();
+  refrescar() {
+    this.switchAg.emit();
+  }
+
+  btnHide: boolean = false;
+  btnClicked: boolean = true;
+
+  btnCarga() {
+    this.btnHide = !this.btnHide;
+    this.btnClicked = !this.btnClicked;
+  }
 }

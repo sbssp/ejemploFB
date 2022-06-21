@@ -1,0 +1,9 @@
+
+.handle {
+    top: 10px;
+    right: 10px;
+    color: #ccc;
+    cursor: move;
+    width: 24px;
+    height: 24px;
+  }

@@ -9,14 +9,14 @@ import { PortfolioService } from 'src/app/servicios/portfolio.service';
 })
 export class IndexEstudiosComponent implements OnInit {
 
-  constructor(private http:PortfolioService) {}
+  constructor(private http: PortfolioService) { }
 
-  estudios!:Estudios[];
+  estudios!: Estudios[];
 
   ngOnInit(): void {
     this.http.getEstudios()
-    .subscribe(data=>{
-      this.estudios=data;
-    });
-}
+      .subscribe(data => {
+        this.estudios = data;
+      });
+  }
 }

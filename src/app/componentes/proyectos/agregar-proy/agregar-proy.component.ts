@@ -12,25 +12,34 @@ import { PortfolioService } from 'src/app/servicios/portfolio.service';
 export class AgregarProyComponent implements OnInit {
 
 
-proyecto = new Proyectos();
+  proyecto = new Proyectos();
 
-  constructor(private http:PortfolioService) { }
+  constructor(private http: PortfolioService) { }
 
   ngOnInit() {
-    
-    }
 
-  
-  guardarProyecto(proyecto:Proyectos){
-    this.http.createProyectos(proyecto)
-    .subscribe(data=>{
-      this.refrescar();
-    })
   }
-  
-  @Output()  switchAg: EventEmitter<string> = new EventEmitter();
-  refrescar(){
-       this.switchAg.emit();
+
+
+  guardarProyecto(proyecto: Proyectos) {
+    this.http.createProyectos(proyecto)
+      .subscribe(data => {
+        this.refrescar();
+      })
+  }
+
+  @Output() switchAg: EventEmitter<string> = new EventEmitter();
+  refrescar() {
+    this.switchAg.emit();
+  }
+
+
+  btnHide: boolean = false;
+  btnClicked: boolean = true;
+
+  btnCarga() {
+    this.btnHide = !this.btnHide;
+    this.btnClicked = !this.btnClicked;
   }
 
 }

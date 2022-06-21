@@ -4,7 +4,7 @@
 <div class="container-lg titulo-contenedor bloque-tarjeta">
   <div class="row">
 
-    <div  #scrollAgregar class="col-4">
+    <div #scrollAgregar class="col-4">
       <div class="fs-2 text lh-lg titulo-css">
         <h2>Proyectos</h2>
       </div>
@@ -13,7 +13,8 @@
     <!--Boton Agregar Bloque-->
     <div class="col-8">
 
-      <button *ngIf="mostrarEditar" (click)="switchAgregar()" (click)="scroll(scrollAgregar)" type="button" class="float-end  btn-agregar">Agregar
+      <button *ngIf="mostrarEditar" (click)="switchAgregar()" (click)="scroll(scrollAgregar)" type="button"
+        class="float-end  btn-agregar">Agregar
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg"
           viewBox="0 0 16 16">
           <path fill-rule="evenodd"
@@ -26,14 +27,14 @@
 
 
 <!--Componentes de Agregar y edicion-->
-<app-agregar-proy  (switchAg)="switchAgregar()" *ngIf="esconderAgregar"></app-agregar-proy>
+<app-agregar-proy (switchAg)="switchAgregar()" *ngIf="esconderAgregar"></app-agregar-proy>
 <div #scrollEditar></div>
 <app-editar-proy (switchEd)="switchEditar()" *ngIf="esconderEditar"></app-editar-proy>
 
 
 
 <!--BLOQUES-->
-<div  *ngFor="let proyecto of proyecto" class="container-lg marco-contenedor">
+<div *ngFor="let proyecto of proyecto" class="container-lg marco-contenedor">
 
   <form action="">
     <div class="row">
@@ -41,7 +42,7 @@
 
         <!--Icono-->
         <div class="row ">
-          <img  src={{proyecto.imagen}} class="img-fluid img_thumbnail" alt="experiencia">
+          <img src={{proyecto.imagen}} class="img-fluid img_thumbnail" alt="experiencia">
         </div>
       </div>
 
@@ -49,23 +50,23 @@
         <div class="row">
           <div class="col-10 fs-2 text lh-lg border-bottom  ">
 
-            <h3 >{{proyecto.nombre}}</h3>
-            <h5 >{{proyecto.enlace}}</h5>
+            <h3>{{proyecto.nombre}}</h3>
+            <h5><a href="{{proyecto.enlace}}">{{proyecto.enlace}} </a></h5>
 
           </div>
         </div>
 
 
         <!--Descripcion-->
-        <div> 
-          <span  class="descripcion"> {{proyecto.descripcion}}</span>
+        <div>
+          <span class="descripcion"><pre> {{proyecto.descripcion}} </pre></span>
         </div>
 
 
         <!--Fecha desde/hasta-->
         <div class="row">
           <div class="col fecha_desde ">
-            <span  class="fecha">{{proyecto.fecha}}</span>
+            <span class="fecha">{{proyecto.fecha}}</span>
             <div>
             </div>
           </div>
@@ -78,10 +79,10 @@
       <div class="col2">
 
         <!--Boton editar -->
-        <button (click)="enviarId(proyecto)" (click)="switchEditar()" (click)="scroll(scrollEditar)" *ngIf="mostrarAgregar" type="button"
-          class="btn btn-primary  float-end ">
+        <button (click)="enviarId(proyecto)" (click)="switchEditar()" (click)="scroll(scrollEditar)"
+          *ngIf="mostrarAgregar" type="button" class="btn btn-primary  float-end ">
           <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-pencil"
-            viewBox="0 0 16 16">  
+            viewBox="0 0 16 16">
             <path
               d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z" />
           </svg>

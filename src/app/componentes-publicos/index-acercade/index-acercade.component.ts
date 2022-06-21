@@ -10,15 +10,15 @@ import { PortfolioService } from 'src/app/servicios/portfolio.service';
 export class IndexAcercadeComponent implements OnInit {
 
 
-  personas!:Persona[];
-  
-  constructor(private http:PortfolioService) { }
+  personas!: Persona[];
+
+  constructor(private http: PortfolioService) { }
 
   ngOnInit(): void {
     this.http.getPersona()
-    .subscribe(data=>{
-    this.personas=data;
-    });
+      .subscribe(data => {
+        this.personas = data;
+      });
   }
 
 

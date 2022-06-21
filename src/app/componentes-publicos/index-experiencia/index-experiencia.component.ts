@@ -10,17 +10,17 @@ import { PortfolioService } from 'src/app/servicios/portfolio.service';
 export class IndexExperienciaComponent implements OnInit {
 
 
-  experiencias!:Experiencia[];
-  
-  constructor(private http:PortfolioService ) { }
+  experiencias!: Experiencia[];
+
+  constructor(private http: PortfolioService) { }
 
 
   //Métodos html
   ngOnInit(): void {
     this.http.getExpeiencia()
-    .subscribe(data=>{
-      this.experiencias=data; 
-    });
+      .subscribe(data => {
+        this.experiencias = data;
+      });
   }
 
-    }
+}

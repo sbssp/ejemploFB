@@ -8,10 +8,10 @@ describe('EditarAcercadeComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ EditarAcercadeComponent ],
-      imports:[HttpClientTestingModule]
+      declarations: [EditarAcercadeComponent],
+      imports: [HttpClientTestingModule]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

@@ -1,3 +1,4 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { IndexExperienciaComponent } from './index-experiencia.component';
@@ -8,7 +9,9 @@ describe('IndexExperienciaComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ IndexExperienciaComponent ]
+      declarations: [ IndexExperienciaComponent ],
+      imports: [HttpClientTestingModule]
+
     })
     .compileComponents();
   });

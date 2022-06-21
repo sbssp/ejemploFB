@@ -10,24 +10,32 @@ import { PortfolioService } from 'src/app/servicios/portfolio.service';
 })
 export class AgregarEstComponent implements OnInit {
 
-  estudio= new Estudios();
+  estudio = new Estudios();
 
-  constructor(private http:PortfolioService) { }
+  constructor(private http: PortfolioService) { }
 
   ngOnInit() {
-    
-    }
 
-  
-  GuardarEstudio(estudio:Estudios){
-    this.http.createEstudios(estudio)
-    .subscribe(data=>{
-      this.refrescar();
-    })
   }
-  
-  @Output()  switchAg: EventEmitter<string> = new EventEmitter();
-  refrescar(){
-       this.switchAg.emit();
+
+
+  GuardarEstudio(estudio: Estudios) {
+    this.http.createEstudios(estudio)
+      .subscribe(data => {
+        this.refrescar();
+      })
+  }
+
+  @Output() switchAg: EventEmitter<string> = new EventEmitter();
+  refrescar() {
+    this.switchAg.emit();
+  }
+
+  btnHide: boolean = false;
+  btnClicked: boolean = true;
+
+  btnCarga() {
+    this.btnHide = !this.btnHide;
+    this.btnClicked = !this.btnClicked;
   }
 }

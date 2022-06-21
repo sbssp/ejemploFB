@@ -1,36 +1,35 @@
-
 <!--HEADER HABILIDADES-->
 <div class="container-lg titulo-contenedor bloque-tarjeta">
-    <div class="row">
-  
-      <div class="col 8">
-        <div class="fs-2 text lh-lg titulo-css">
-          <h2>Hard & Soft Skills</h2>
-        </div>
-      </div>
-  
-  
-   
-    </div>
-  </div>
- 
-  <!--BLOQUE HABILIDADES-->
-  <div class="container-lg  bloque-tarjeta">
-  
   <div class="row">
-  
-    <div *ngFor="let habilidad of habilidades"  class="col-lg-3 col-md-4 col-sm-6">
-    <div class="card text-center align-items-center">
-      <!-- Progress Bars--> 
-      <div class="radialProgressBar progress-{{habilidad.dominio}}">
-        <div class="overlay">{{habilidad.dominio+"%"}}</div>
+
+    <div class="col 8">
+      <div class="fs-2 text lh-lg titulo-css">
+        <h2>Hard & Soft Skills</h2>
       </div>
-      <div class="card-body">
-        <span>{{habilidad.habilidad}}</span>
-       
-      </div>
-    </div>
     </div>
 
+
+
+  </div>
+</div>
+
+<!--BLOQUE HABILIDADES-->
+<div class="container-lg  bloque-tarjeta">
+
+  <div class="row">
+
+    <div *ngFor="let habilidad of habilidades" class="col-lg-3 col-md-4 col-sm-6">
+      <div class="card text-center align-items-center">
+        <!-- Progress Bars-->
+        <div class="radialProgressBar progress-{{habilidad.dominio}}">
+          <div class="overlay">{{habilidad.dominio+"%"}}</div>
+        </div>
+        <div class="card-body">
+          <span>{{habilidad.habilidad}}</span>
+
+        </div>
+      </div>
     </div>
-    </div>
+
+  </div>
+</div>

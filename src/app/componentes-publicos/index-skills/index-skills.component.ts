@@ -8,20 +8,20 @@ import { PortfolioService } from 'src/app/servicios/portfolio.service';
   styleUrls: ['./index-skills.component.css']
 })
 export class IndexSkillsComponent implements OnInit {
-  
-  habilidades!:Habilidades[];
+
+  habilidades!: Habilidades[];
 
 
-  constructor(private http:PortfolioService) { }
+  constructor(private http: PortfolioService) { }
 
-  
 
-  
+
+
   ngOnInit(): void {
     this.http.getHabilidades()
-    .subscribe(data=>{
-      this.habilidades=data;
-    });
+      .subscribe(data => {
+        this.habilidades = data;
+      });
 
   }
 

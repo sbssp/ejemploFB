@@ -8,7 +8,7 @@ import { PortfolioService } from 'src/app/servicios/portfolio.service';
   styleUrls: ['./index-proyectos.component.css']
 })
 export class IndexProyectosComponent implements OnInit {
-  
+
   proyecto!: Proyectos[];
 
   constructor(private http: PortfolioService) { }

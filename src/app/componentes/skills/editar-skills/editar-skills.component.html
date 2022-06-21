@@ -5,10 +5,15 @@
                 <h3 class=" text-center titulo-contenedor-agregar">Editar Habilidad</h3>
             </div>
             <div class="card-body">
-                <label><h4>Habilidad</h4></label>
+                <label>
+                    <h4>Habilidad</h4>
+                </label>
                 <input [(ngModel)]="habilidad.habilidad" name="habilidad" type="text" class="form-control">
-                <label><h4>Dominio</h4></label>
-                <select [(ngModel)]="habilidad.dominio" name="dominio" class="form-select" aria-label="Default select example">
+                <label>
+                    <h4>Dominio</h4>
+                </label>
+                <select [(ngModel)]="habilidad.dominio" name="dominio" class="form-select"
+                    aria-label="Default select example">
                     <option selected>Open this select menu</option>
                     <option value="10">10%</option>
                     <option value="20">20%</option>
@@ -20,11 +25,11 @@
                     <option value="80">80%</option>
                     <option value="90">90%</option>
                     <option value="100">100%</option>
-                  </select>
+                </select>
                 <div>
                     <!--Boton editar-->
                     <div class="card-footefa-rotate-180 justify-content-center m-top">
-                        <button (click)="actualizarSkill(habilidad)" 
+                        <button (click)="btnCarga()" (click)="actualizarSkill(habilidad)" [hidden]="btnHide"
                             type="submit" class="btn btn-success float-center">Actualizar
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                 class="bi bi-save2-fill" viewBox="0 0 16 16">
@@ -32,12 +37,15 @@
                                     d="M8.5 1.5A1.5 1.5 0 0 1 10 0h4a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h6c-.314.418-.5.937-.5 1.5v6h-2a.5.5 0 0 0-.354.854l2.5 2.5a.5.5 0 0 0 .708 0l2.5-2.5A.5.5 0 0 0 10.5 7.5h-2v-6z" />
                             </svg>
                         </button>
+                        <button *ngIf="btnHide" disabled class="btn float-center btn-success">
+                            <div class="spinner-border" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                        </button>
 
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-</div>
-
-

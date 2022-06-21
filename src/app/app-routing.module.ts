@@ -8,12 +8,14 @@ import { IndexComponent } from './contenedores/index/index.component';
 
 const routes: Routes = [
 
-  {path:'home', component:IndexComponent},
- //{ path: '**', component: 404Component },  
- { path: 'login', component: LoginComponent },
- //{ path: 'register', component: RegisterComponent },
- { path: 'admin', component: AdminPanelComponent },
- { path: '', redirectTo: 'home', pathMatch: 'full' }
+  { path: 'home', component: IndexComponent },
+  //{ path: '**', component: 404Component },  
+  { path: 'login', component: LoginComponent },
+  //{ path: 'register', component: RegisterComponent },
+  { path: 'admin', component: AdminPanelComponent },
+  { path: 'admin', redirectTo: 'admin', pathMatch: 'full' },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'login', redirectTo: 'login', pathMatch: 'full' }
 
 ];
 

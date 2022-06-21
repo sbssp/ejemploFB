@@ -13,7 +13,8 @@
     <!--Boton Agregar Experiencia-->
     <div class="col-8">
 
-      <button *ngIf="mostrarEditar" (click)="switchAgregar()" (click)="scroll(scrollAgregar)" type="button" class="float-end  btn-agregar">Agregar
+      <button *ngIf="mostrarEditar" (click)="switchAgregar()" (click)="scroll(scrollAgregar)" type="button"
+        class="float-end  btn-agregar">Agregar
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg"
           viewBox="0 0 16 16">
           <path fill-rule="evenodd"
@@ -42,7 +43,7 @@
 
         <!--Icono experiencia-->
         <div class="row ">
-          <img  src={{experiencia.icono}} class="img-fluid img_thumbnail" alt="experiencia">
+          <img src={{experiencia.icono}} class="img-fluid img_thumbnail" alt="experiencia">
         </div>
       </div>
 
@@ -50,23 +51,23 @@
         <div class="row">
           <div class="col-10 fs-2 text lh-lg border-bottom  ">
 
-            <h3 >{{experiencia.empresa}}</h3>
-            <h5 >{{experiencia.puesto}}</h5>
+            <h3>{{experiencia.puesto}}</h3>
+            <h5>{{experiencia.empresa}}</h5>
 
           </div>
         </div>
 
 
         <!--Descripcion-->
-        <div> 
-          <span  class="descripcion"> {{experiencia.descripcion}}</span>
+        <div>
+          <span class="descripcion"> <pre>{{experiencia.descripcion}}</pre></span>
         </div>
 
 
         <!--Fecha desde/hasta-->
         <div class="row">
           <div class="col fecha_desde ">
-            <span  class="fecha">{{experiencia.fecha_desde}} / {{experiencia.fecha_hasta}}</span>
+            <span class="fecha">{{experiencia.fecha_desde}} / {{experiencia.fecha_hasta}}</span>
             <div>
             </div>
           </div>
@@ -79,8 +80,8 @@
       <div class="col2">
 
         <!--Boton editar -->
-        <button (click)="enviarId(experiencia)" (click)="switchEditar()" (click)="scroll(scrollEditar)" *ngIf="mostrarAgregar" type="button"
-          class="btn btn-primary  float-end ">
+        <button (click)="enviarId(experiencia)" (click)="switchEditar()" (click)="scroll(scrollEditar)"
+          *ngIf="mostrarAgregar" type="button" class="btn btn-primary  float-end ">
           <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-pencil"
             viewBox="0 0 16 16">
             <path
