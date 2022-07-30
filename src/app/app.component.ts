@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { PortfolioService } from './servicios/portfolio.service';
 import { TokenStorageService } from './servicios/token-storage.service';
 
 

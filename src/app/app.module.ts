@@ -30,6 +30,14 @@ import { IndexEstudiosComponent } from './componentes-publicos/index-estudios/in
 import { IndexSkillsComponent } from './componentes-publicos/index-skills/index-skills.component';
 import { IndexProyectosComponent } from './componentes-publicos/index-proyectos/index-proyectos.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { DatepickerComponent } from './funcionalidades/datepicker/datepicker.component';
+import { MatRippleModule } from '@angular/material/core';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSliderModule } from '@angular/material/slider';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+
+
 
 @NgModule({
   declarations: [
@@ -56,7 +64,8 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
     IndexExperienciaComponent,
     IndexEstudiosComponent,
     IndexSkillsComponent,
-    IndexProyectosComponent
+    IndexProyectosComponent,
+    DatepickerComponent
     
     ],
   imports: [
@@ -64,8 +73,14 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
-  ],
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatRippleModule,
+    BrowserAnimationsModule,
+    MatSliderModule,
+    MatDatepickerModule
+  
+    ],
   
   providers: [authInterceptorProviders, {provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
